@@ -11,7 +11,6 @@ src/contractifyproduction/subfolders.py
 src/contractifyproduction/tasks.py
 src/contractifyproduction/users.py
 src/contractifyproduction/sdk.py
-.gitignore
 pylintrc
 setup.py
 src/contractifyproduction/__init__.py
