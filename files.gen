@@ -15,6 +15,7 @@ pylintrc
 setup.py
 src/contractifyproduction/__init__.py
 src/contractifyproduction/models/__init__.py
+src/contractifyproduction/models/errors/sdkerror.py
 src/contractifyproduction/utils/__init__.py
 src/contractifyproduction/utils/retries.py
 src/contractifyproduction/utils/utils.py
@@ -97,6 +98,7 @@ src/contractifyproduction/models/shared/company_read.py
 src/contractifyproduction/models/shared/user_collection.py
 src/contractifyproduction/models/shared/user_read.py
 src/contractifyproduction/models/shared/__init__.py
+src/contractifyproduction/models/errors/__init__.py
 docs/sdks/contractifyproduction/README.md
 docs/sdks/contracttypes/README.md
 docs/sdks/contracts/README.md
