@@ -20,7 +20,7 @@ class Documents:
         
         url = utils.generate_url(operations.DeleteDocumentRequest, base_url, '/api/companies/{company}/documents/{document}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0.8, application/json;q=0.5, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
@@ -68,7 +68,7 @@ class Documents:
         
         url = utils.generate_url(operations.GetDocumentRequest, base_url, '/api/companies/{company}/documents/{document}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0.8, application/json;q=0.5, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
@@ -115,7 +115,7 @@ class Documents:
         url = utils.generate_url(operations.ListDocumentsRequest, base_url, '/api/companies/{company}/documents', request)
         headers = {}
         query_params = utils.get_query_params(operations.ListDocumentsRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0.7, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
@@ -158,7 +158,7 @@ class Documents:
         req_content_type, data, form = utils.serialize_request_body(request, "document_write", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0.8, application/json;q=0.5, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)

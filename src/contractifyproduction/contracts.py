@@ -23,7 +23,7 @@ class Contracts:
         req_content_type, data, form = utils.serialize_request_body(request, "contract_write", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0.8, application/json;q=0.5, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
@@ -69,7 +69,7 @@ class Contracts:
         
         url = utils.generate_url(operations.DeleteContractRequest, base_url, '/api/companies/{company}/contracts/{contract}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0.8, application/json;q=0.5, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
@@ -117,7 +117,7 @@ class Contracts:
         
         url = utils.generate_url(operations.GetContractRequest, base_url, '/api/companies/{company}/contracts/{contract}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0.8, application/json;q=0.5, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
@@ -164,7 +164,7 @@ class Contracts:
         url = utils.generate_url(operations.ListContractsRequest, base_url, '/api/companies/{company}/contracts', request)
         headers = {}
         query_params = utils.get_query_params(operations.ListContractsRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0.7, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
@@ -207,7 +207,7 @@ class Contracts:
         req_content_type, data, form = utils.serialize_request_body(request, "contract_write", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0.8, application/json;q=0.6, application/json;q=0.4, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
