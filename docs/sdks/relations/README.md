@@ -38,7 +38,7 @@ req = operations.CreateRelationRequest(
         vat='BE12345678',
         website='https://www.example.org',
     ),
-    company=607831,
+    company=521848,
 )
 
 res = s.relations.create_relation(req, operations.CreateRelationSecurity(
@@ -76,8 +76,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.DeleteRelationRequest(
-    company=363711,
-    relation=325047,
+    company=105907,
+    relation=414662,
 )
 
 res = s.relations.delete_relation(req, operations.DeleteRelationSecurity(
@@ -115,8 +115,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.GetRelationRequest(
-    company=570197,
-    relation=38425,
+    company=473600,
+    relation=264555,
 )
 
 res = s.relations.get_relation(req, operations.GetRelationSecurity(
@@ -154,9 +154,9 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.ListRelationsRequest(
-    company=438601,
-    page=634274,
-    reference='doloribus',
+    company=186332,
+    page=774234,
+    reference='cum',
 )
 
 res = s.relations.list_relations(req, operations.ListRelationsSecurity(
@@ -211,8 +211,8 @@ req = operations.UpdateRelationRequest(
         vat='BE12345678',
         website='https://www.example.org',
     ),
-    company=958950,
-    relation=102044,
+    company=456150,
+    relation=216550,
 )
 
 res = s.relations.update_relation(req, operations.UpdateRelationSecurity(

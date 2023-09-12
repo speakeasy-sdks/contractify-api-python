@@ -17,7 +17,7 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.ListLegalEntitiesRequest(
-    company=666767,
+    company=678880,
 )
 
 res = s.legal_entities.list_legal_entities(req, operations.ListLegalEntitiesSecurity(

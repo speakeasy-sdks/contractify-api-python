@@ -12,7 +12,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class LegalEntityCollection:
-    r"""OK"""
     data: Optional[list[shared_legalentity_read.LegalEntityRead]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
 

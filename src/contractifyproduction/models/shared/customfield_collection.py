@@ -13,7 +13,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class CustomFieldCollection:
-    r"""OK"""
     data: Optional[list[shared_customfield_read.CustomFieldRead]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     meta: Optional[shared_pagination.Pagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
     

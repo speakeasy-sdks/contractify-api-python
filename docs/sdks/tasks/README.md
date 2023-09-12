@@ -34,7 +34,7 @@ req = operations.CreateTaskRequest(
         status=shared.TaskWriteStatus.ACCOMPLISHED,
         title='My task',
     ),
-    company=208876,
+    company=135218,
 )
 
 res = s.tasks.create_task(req, operations.CreateTaskSecurity(
@@ -72,8 +72,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.DeleteTaskRequest(
-    company=635059,
-    task=161309,
+    company=18789,
+    task=324141,
 )
 
 res = s.tasks.delete_task(req, operations.DeleteTaskSecurity(
@@ -111,8 +111,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.GetTaskRequest(
-    company=995300,
-    task=653108,
+    company=617636,
+    task=149675,
 )
 
 res = s.tasks.get_task(req, operations.GetTaskSecurity(
@@ -150,8 +150,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.ListTasksRequest(
-    company=581850,
-    page=253291,
+    company=612096,
+    page=222321,
 )
 
 res = s.tasks.list_tasks(req, operations.ListTasksSecurity(
@@ -201,8 +201,8 @@ req = operations.UpdateTaskRequest(
         status=shared.TaskUpdateStatus.ACCOMPLISHED,
         title='My task',
     ),
-    company=414369,
-    task=466311,
+    company=616934,
+    task=386489,
 )
 
 res = s.tasks.update_task(req, operations.UpdateTaskSecurity(

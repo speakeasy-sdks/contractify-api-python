@@ -5,7 +5,6 @@ import dataclasses
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import date
-from marshmallow import fields
 from typing import Optional
 
 
@@ -14,7 +13,7 @@ from typing import Optional
 @dataclasses.dataclass
 class ContractTermination:
     is_terminable_at_any_time: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_terminable_at_any_time'), 'exclude': lambda f: f is None }})
-    termination_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termination_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
+    termination_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termination_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     termination_duration: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termination_duration'), 'exclude': lambda f: f is None }})
     
 

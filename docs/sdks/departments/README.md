@@ -24,7 +24,7 @@ req = operations.CreateDepartmentRequest(
     department_write=shared.DepartmentWrite(
         name='Sales',
     ),
-    company=264555,
+    company=568045,
 )
 
 res = s.departments.create_department(req, operations.CreateDepartmentSecurity(
@@ -62,8 +62,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.DeleteDepartmentRequest(
-    company=186332,
-    department=774234,
+    company=392785,
+    department=925597,
 )
 
 res = s.departments.delete_department(req, operations.DeleteDepartmentSecurity(
@@ -101,8 +101,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.GetDepartmentRequest(
-    company=736918,
-    department=456150,
+    company=836079,
+    department=71036,
 )
 
 res = s.departments.get_department(req, operations.GetDepartmentSecurity(
@@ -140,7 +140,7 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.ListDepartmentsRequest(
-    company=216550,
+    company=337396,
 )
 
 res = s.departments.list_departments(req, operations.ListDepartmentsSecurity(
@@ -181,8 +181,8 @@ req = operations.UpdateDepartmentRequest(
     department_write=shared.DepartmentWrite(
         name='Sales',
     ),
-    company=568434,
-    department=135218,
+    company=87129,
+    department=648172,
 )
 
 res = s.departments.update_department(req, operations.UpdateDepartmentSecurity(

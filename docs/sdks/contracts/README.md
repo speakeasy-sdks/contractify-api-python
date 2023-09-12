@@ -24,33 +24,18 @@ s = contractifyproduction.ContractifyProduction()
 req = operations.CreateContractRequest(
     contract_write=shared.ContractWrite(
         contract_types=[
-            844266,
-            602763,
-            857946,
+            715190,
         ],
         custom_field_values=[
             shared.CustomFieldValueWrite(
                 custom_field_id=2,
-                value='illum',
-            ),
-            shared.CustomFieldValueWrite(
-                custom_field_id=2,
-                value='vel',
-            ),
-            shared.CustomFieldValueWrite(
-                custom_field_id=2,
-                value='error',
+                value='quibusdam',
             ),
         ],
         departments=[
-            384382,
-            437587,
-            297534,
+            602763,
         ],
         documents=[
-            1,
-            1,
-            1,
             1,
         ],
         dossier_id=1,
@@ -58,20 +43,16 @@ req = operations.CreateContractRequest(
         end_date=dateutil.parser.parse('2021-12-31').date(),
         is_open_ended=False,
         legal_entities=[
-            963663,
+            857946,
         ],
         name='Partnership agreement',
         offices=[
-            383441,
-            477665,
+            544883,
         ],
         owner_id=1,
         phase=shared.ContractPhase.ONGOING,
         relations=[
-            812169,
-            528895,
-            479977,
-            568045,
+            847252,
         ],
         renewal=shared.ContractRenewal(
             automatic_renewal=shared.ContractAutomaticRenewal(
@@ -87,7 +68,7 @@ req = operations.CreateContractRequest(
             termination_duration='P1M',
         ),
     ),
-    company=392785,
+    company=423655,
 )
 
 res = s.contracts.create_contract(req, operations.CreateContractSecurity(
@@ -125,8 +106,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.DeleteContractRequest(
-    company=925597,
-    contract=836079,
+    company=623564,
+    contract=645894,
 )
 
 res = s.contracts.delete_contract(req, operations.DeleteContractSecurity(
@@ -164,8 +145,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.GetContractRequest(
-    company=71036,
-    contract=337396,
+    company=384382,
+    contract=437587,
 )
 
 res = s.contracts.get_contract(req, operations.GetContractSecurity(
@@ -203,8 +184,8 @@ from contractifyproduction.models import operations
 s = contractifyproduction.ContractifyProduction()
 
 req = operations.ListContractsRequest(
-    company=87129,
-    page=648172,
+    company=297534,
+    page=891773,
 )
 
 res = s.contracts.list_contracts(req, operations.ListContractsSecurity(
@@ -245,34 +226,18 @@ s = contractifyproduction.ContractifyProduction()
 req = operations.UpdateContractRequest(
     contract_write=shared.ContractWrite(
         contract_types=[
-            368241,
+            56713,
         ],
         custom_field_values=[
             shared.CustomFieldValueWrite(
                 custom_field_id=2,
-                value='sapiente',
-            ),
-            shared.CustomFieldValueWrite(
-                custom_field_id=2,
-                value='quo',
-            ),
-            shared.CustomFieldValueWrite(
-                custom_field_id=2,
-                value='odit',
-            ),
-            shared.CustomFieldValueWrite(
-                custom_field_id=2,
-                value='at',
+                value='delectus',
             ),
         ],
         departments=[
-            978619,
-            473608,
-            799159,
-            800911,
+            272656,
         ],
         documents=[
-            1,
             1,
         ],
         dossier_id=1,
@@ -280,22 +245,16 @@ req = operations.UpdateContractRequest(
         end_date=dateutil.parser.parse('2021-12-31').date(),
         is_open_ended=False,
         legal_entities=[
-            780529,
-            678880,
-            118274,
+            383441,
         ],
         name='Partnership agreement',
         offices=[
-            639921,
-            582020,
-            143353,
+            477665,
         ],
         owner_id=1,
         phase=shared.ContractPhase.ONGOING,
         relations=[
-            944669,
-            758616,
-            521848,
+            791725,
         ],
         renewal=shared.ContractRenewal(
             automatic_renewal=shared.ContractAutomaticRenewal(
@@ -311,8 +270,8 @@ req = operations.UpdateContractRequest(
             termination_duration='P1M',
         ),
     ),
-    company=105907,
-    contract=414662,
+    company=812169,
+    contract=528895,
 )
 
 res = s.contracts.update_contract(req, operations.UpdateContractSecurity(
