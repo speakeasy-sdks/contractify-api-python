@@ -1,4 +1,4 @@
-# offices
+# Offices
 
 ### Available Operations
 

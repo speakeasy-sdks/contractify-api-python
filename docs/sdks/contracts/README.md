@@ -1,4 +1,4 @@
-# contracts
+# Contracts
 
 ### Available Operations
 

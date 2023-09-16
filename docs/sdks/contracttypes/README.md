@@ -1,4 +1,4 @@
-# contract_types
+# ContractTypes
 
 ### Available Operations
 

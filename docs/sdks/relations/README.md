@@ -1,4 +1,4 @@
-# relations
+# Relations
 
 ### Available Operations
 

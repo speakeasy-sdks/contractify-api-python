@@ -1,4 +1,4 @@
-# subfolders
+# Subfolders
 
 ### Available Operations
 

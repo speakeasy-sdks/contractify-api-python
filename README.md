@@ -36,11 +36,11 @@ if res.contract_type_collection is not None:
 ## Available Resources and Operations
 
 
-### [contract_types](docs/sdks/contracttypes/README.md)
+### [ContractTypes](docs/sdks/contracttypes/README.md)
 
 * [list_contract_types](docs/sdks/contracttypes/README.md#list_contract_types) - List contract types
 
-### [contracts](docs/sdks/contracts/README.md)
+### [Contracts](docs/sdks/contracts/README.md)
 
 * [create_contract](docs/sdks/contracts/README.md#create_contract) - Create a contract
 * [delete_contract](docs/sdks/contracts/README.md#delete_contract) - Delete a contract
@@ -48,11 +48,11 @@ if res.contract_type_collection is not None:
 * [list_contracts](docs/sdks/contracts/README.md#list_contracts) - List contracts
 * [update_contract](docs/sdks/contracts/README.md#update_contract) - Update a contract
 
-### [custom_fields](docs/sdks/customfields/README.md)
+### [CustomFields](docs/sdks/customfields/README.md)
 
 * [list_custom_fields](docs/sdks/customfields/README.md#list_custom_fields) - List custom fields
 
-### [departments](docs/sdks/departments/README.md)
+### [Departments](docs/sdks/departments/README.md)
 
 * [create_department](docs/sdks/departments/README.md#create_department) - Create a department
 * [delete_department](docs/sdks/departments/README.md#delete_department) - Delete a department
@@ -60,18 +60,18 @@ if res.contract_type_collection is not None:
 * [list_departments](docs/sdks/departments/README.md#list_departments) - List departments
 * [update_department](docs/sdks/departments/README.md#update_department) - Update a department
 
-### [documents](docs/sdks/documents/README.md)
+### [Documents](docs/sdks/documents/README.md)
 
 * [delete_document](docs/sdks/documents/README.md#delete_document) - Delete a document
 * [get_document](docs/sdks/documents/README.md#get_document) - Get a document
 * [list_documents](docs/sdks/documents/README.md#list_documents) - List documents
 * [update_document](docs/sdks/documents/README.md#update_document) - Update a document
 
-### [legal_entities](docs/sdks/legalentities/README.md)
+### [LegalEntities](docs/sdks/legalentities/README.md)
 
 * [list_legal_entities](docs/sdks/legalentities/README.md#list_legal_entities) - List legal entities
 
-### [offices](docs/sdks/offices/README.md)
+### [Offices](docs/sdks/offices/README.md)
 
 * [create_office](docs/sdks/offices/README.md#create_office) - Create an office
 * [delete_office](docs/sdks/offices/README.md#delete_office) - Delete an office
@@ -79,7 +79,7 @@ if res.contract_type_collection is not None:
 * [list_offices](docs/sdks/offices/README.md#list_offices) - List offices
 * [update_office](docs/sdks/offices/README.md#update_office) - Update an office
 
-### [relations](docs/sdks/relations/README.md)
+### [Relations](docs/sdks/relations/README.md)
 
 * [create_relation](docs/sdks/relations/README.md#create_relation) - Create a relation
 * [delete_relation](docs/sdks/relations/README.md#delete_relation) - Delete a relation
@@ -87,11 +87,11 @@ if res.contract_type_collection is not None:
 * [list_relations](docs/sdks/relations/README.md#list_relations) - List relations
 * [update_relation](docs/sdks/relations/README.md#update_relation) - Update a relation
 
-### [subfolders](docs/sdks/subfolders/README.md)
+### [Subfolders](docs/sdks/subfolders/README.md)
 
 * [list_subfolders](docs/sdks/subfolders/README.md#list_subfolders) - List subfolders
 
-### [tasks](docs/sdks/tasks/README.md)
+### [Tasks](docs/sdks/tasks/README.md)
 
 * [create_task](docs/sdks/tasks/README.md#create_task) - Create a task
 * [delete_task](docs/sdks/tasks/README.md#delete_task) - Delete a task
@@ -99,7 +99,7 @@ if res.contract_type_collection is not None:
 * [list_tasks](docs/sdks/tasks/README.md#list_tasks) - List tasks
 * [update_task](docs/sdks/tasks/README.md#update_task) - Update a task
 
-### [users](docs/sdks/users/README.md)
+### [Users](docs/sdks/users/README.md)
 
 * [current_user](docs/sdks/users/README.md#current_user) - Current User
 * [list_users](docs/sdks/users/README.md#list_users) - List users
