@@ -12,7 +12,7 @@ class Users:
         self.sdk_configuration = sdk_config
         
     
-    def current_user(self, security: operations.CurrentUserSecurity) -> operations.CurrentUserResponse:
+    def current_user(self) -> operations.CurrentUserResponse:
         r"""Current User
         Get the current user details
         """
@@ -23,7 +23,7 @@ class Users:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -52,7 +52,7 @@ class Users:
         return res
 
     
-    def list_users(self, request: operations.ListUsersRequest, security: operations.ListUsersSecurity) -> operations.ListUsersResponse:
+    def list_users(self, request: operations.ListUsersRequest) -> operations.ListUsersResponse:
         r"""List users
         List all the users within a company
         """
@@ -64,7 +64,7 @@ class Users:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

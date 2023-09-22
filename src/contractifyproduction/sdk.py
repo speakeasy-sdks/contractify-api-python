@@ -14,6 +14,7 @@ from .subfolders import Subfolders
 from .tasks import Tasks
 from .users import Users
 from contractifyproduction import utils
+from contractifyproduction.models import shared
 
 class ContractifyProduction:
     r"""Contractify Public API: This is the public API for integrating with Contractify
@@ -79,6 +80,7 @@ class ContractifyProduction:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
+                 security: shared.Security = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -87,6 +89,8 @@ class ContractifyProduction:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
+        :param security: The security details required for authentication
+        :type security: shared.Security
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -101,7 +105,7 @@ class ContractifyProduction:
         if client is None:
             client = requests_http.Session()
         
-        security_client = client
+        security_client = utils.configure_security_client(client, security)
         
         if server_url is not None:
             if url_params is not None:

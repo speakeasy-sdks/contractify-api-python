@@ -12,7 +12,7 @@ class ContractTypes:
         self.sdk_configuration = sdk_config
         
     
-    def list_contract_types(self, request: operations.ListContractTypesRequest, security: operations.ListContractTypesSecurity) -> operations.ListContractTypesResponse:
+    def list_contract_types(self, request: operations.ListContractTypesRequest) -> operations.ListContractTypesResponse:
         r"""List contract types
         List all the contract types within a company
         """
@@ -23,7 +23,7 @@ class ContractTypes:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

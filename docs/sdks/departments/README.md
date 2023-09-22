@@ -18,19 +18,21 @@ Create a department
 import contractifyproduction
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.CreateDepartmentRequest(
     department_write=shared.DepartmentWrite(
         name='Sales',
     ),
-    company=568045,
+    company=392785,
 )
 
-res = s.departments.create_department(req, operations.CreateDepartmentSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.departments.create_department(req)
 
 if res.create_department_201_application_json_object is not None:
     # handle response
@@ -38,10 +40,9 @@ if res.create_department_201_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.CreateDepartmentRequest](../../models/operations/createdepartmentrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.CreateDepartmentSecurity](../../models/operations/createdepartmentsecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.CreateDepartmentRequest](../../models/operations/createdepartmentrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
@@ -57,19 +58,21 @@ Delete a department
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.DeleteDepartmentRequest(
-    company=392785,
-    department=925597,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.departments.delete_department(req, operations.DeleteDepartmentSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.DeleteDepartmentRequest(
+    company=925597,
+    department=836079,
+)
+
+res = s.departments.delete_department(req)
 
 if res.status_code == 200:
     # handle response
@@ -77,10 +80,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.DeleteDepartmentRequest](../../models/operations/deletedepartmentrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.DeleteDepartmentSecurity](../../models/operations/deletedepartmentsecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.DeleteDepartmentRequest](../../models/operations/deletedepartmentrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
@@ -96,19 +98,21 @@ Get information about a department
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.GetDepartmentRequest(
-    company=836079,
-    department=71036,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.departments.get_department(req, operations.GetDepartmentSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.GetDepartmentRequest(
+    company=71036,
+    department=337396,
+)
+
+res = s.departments.get_department(req)
 
 if res.get_department_200_application_json_object is not None:
     # handle response
@@ -116,10 +120,9 @@ if res.get_department_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.GetDepartmentRequest](../../models/operations/getdepartmentrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.GetDepartmentSecurity](../../models/operations/getdepartmentsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.GetDepartmentRequest](../../models/operations/getdepartmentrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -135,18 +138,20 @@ List all the departments within a company
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.ListDepartmentsRequest(
-    company=337396,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.departments.list_departments(req, operations.ListDepartmentsSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.ListDepartmentsRequest(
+    company=87129,
+)
+
+res = s.departments.list_departments(req)
 
 if res.department_collection is not None:
     # handle response
@@ -154,10 +159,9 @@ if res.department_collection is not None:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.ListDepartmentsRequest](../../models/operations/listdepartmentsrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.ListDepartmentsSecurity](../../models/operations/listdepartmentssecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.ListDepartmentsRequest](../../models/operations/listdepartmentsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
@@ -175,20 +179,22 @@ Update a department
 import contractifyproduction
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.UpdateDepartmentRequest(
     department_write=shared.DepartmentWrite(
         name='Sales',
     ),
-    company=87129,
-    department=648172,
+    company=648172,
+    department=20218,
 )
 
-res = s.departments.update_department(req, operations.UpdateDepartmentSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.departments.update_department(req)
 
 if res.update_department_200_application_json_object is not None:
     # handle response
@@ -196,10 +202,9 @@ if res.update_department_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.UpdateDepartmentRequest](../../models/operations/updatedepartmentrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.UpdateDepartmentSecurity](../../models/operations/updatedepartmentsecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.UpdateDepartmentRequest](../../models/operations/updatedepartmentrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response

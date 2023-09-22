@@ -35,6 +35,7 @@ from .pagination import *
 from .relation_collection import *
 from .relation_read import *
 from .relation_write import *
+from .security import *
 from .task_collection import *
 from .task_read import *
 from .task_update import *
@@ -43,4 +44,4 @@ from .user_collection import *
 from .user_current import *
 from .user_read import *
 
-__all__ = ["Address","CompanyRead","ContractAutomaticRenewal","ContractCollection","ContractDocumentRead","ContractPhase","ContractRead","ContractRenewal","ContractTermination","ContractTypeCollection","ContractTypeNameRead","ContractTypeRead","ContractWrite","CustomFieldCollection","CustomFieldRead","CustomFieldValueRead","CustomFieldValueWrite","DepartmentCollection","DepartmentRead","DepartmentWrite","DocumentCollection","DocumentRead","DocumentVersionRead","DocumentWrite","DossierCollection","DossierRead","LegalEntityCollection","LegalEntityRead","OfficeCollection","OfficeRead","OfficeWrite","Pagination","RelationCollection","RelationRead","RelationWrite","TaskCollection","TaskRead","TaskReadDueDateDependsOn","TaskReadStatus","TaskUpdate","TaskUpdateDueDateDependsOn","TaskUpdateStatus","TaskWrite","TaskWriteDueDateDependsOn","TaskWriteStatus","UserCollection","UserCurrent","UserRead","UserReadRole"]
+__all__ = ["Address","CompanyRead","ContractAutomaticRenewal","ContractCollection","ContractDocumentRead","ContractPhase","ContractRead","ContractRenewal","ContractTermination","ContractTypeCollection","ContractTypeNameRead","ContractTypeRead","ContractWrite","CustomFieldCollection","CustomFieldRead","CustomFieldValueRead","CustomFieldValueWrite","DepartmentCollection","DepartmentRead","DepartmentWrite","DocumentCollection","DocumentRead","DocumentVersionRead","DocumentWrite","DossierCollection","DossierRead","LegalEntityCollection","LegalEntityRead","OfficeCollection","OfficeRead","OfficeWrite","Pagination","RelationCollection","RelationRead","RelationWrite","Security","TaskCollection","TaskRead","TaskReadDueDateDependsOn","TaskReadStatus","TaskUpdate","TaskUpdateDueDateDependsOn","TaskUpdateStatus","TaskWrite","TaskWriteDueDateDependsOn","TaskWriteStatus","UserCollection","UserCurrent","UserRead","UserReadRole"]

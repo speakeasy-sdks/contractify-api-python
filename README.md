@@ -10,22 +10,22 @@ pip install git+https://github.com/speakeasy-sdks/contractify-api-python.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.ListContractTypesRequest(
-    company=548814,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.contract_types.list_contract_types(req, operations.ListContractTypesSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.ListContractTypesRequest(
+    company=592845,
+)
+
+res = s.contract_types.list_contract_types(req)
 
 if res.contract_type_collection is not None:
     # handle response
@@ -104,6 +104,32 @@ if res.contract_type_collection is not None:
 * [current_user](docs/sdks/users/README.md#current_user) - Current User
 * [list_users](docs/sdks/users/README.md#list_users) - List users
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `None`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

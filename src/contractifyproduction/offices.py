@@ -12,7 +12,7 @@ class Offices:
         self.sdk_configuration = sdk_config
         
     
-    def create_office(self, request: operations.CreateOfficeRequest, security: operations.CreateOfficeSecurity) -> operations.CreateOfficeResponse:
+    def create_office(self, request: operations.CreateOfficeRequest) -> operations.CreateOfficeResponse:
         r"""Create an office
         Create an office
         """
@@ -26,7 +26,7 @@ class Offices:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -61,7 +61,7 @@ class Offices:
         return res
 
     
-    def delete_office(self, request: operations.DeleteOfficeRequest, security: operations.DeleteOfficeSecurity) -> operations.DeleteOfficeResponse:
+    def delete_office(self, request: operations.DeleteOfficeRequest) -> operations.DeleteOfficeResponse:
         r"""Delete an office
         Delete an office
         """
@@ -72,7 +72,7 @@ class Offices:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -109,7 +109,7 @@ class Offices:
         return res
 
     
-    def get_office(self, request: operations.GetOfficeRequest, security: operations.GetOfficeSecurity) -> operations.GetOfficeResponse:
+    def get_office(self, request: operations.GetOfficeRequest) -> operations.GetOfficeResponse:
         r"""Get an office
         Get information about an office
         """
@@ -120,7 +120,7 @@ class Offices:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -155,7 +155,7 @@ class Offices:
         return res
 
     
-    def list_offices(self, request: operations.ListOfficesRequest, security: operations.ListOfficesSecurity) -> operations.ListOfficesResponse:
+    def list_offices(self, request: operations.ListOfficesRequest) -> operations.ListOfficesResponse:
         r"""List offices
         List all the offices within a company
         """
@@ -166,7 +166,7 @@ class Offices:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -195,7 +195,7 @@ class Offices:
         return res
 
     
-    def update_office(self, request: operations.UpdateOfficeRequest, security: operations.UpdateOfficeSecurity) -> operations.UpdateOfficeResponse:
+    def update_office(self, request: operations.UpdateOfficeRequest) -> operations.UpdateOfficeResponse:
         r"""Update an office
         Update an office
         """
@@ -209,7 +209,7 @@ class Offices:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

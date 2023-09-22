@@ -12,7 +12,7 @@ class Documents:
         self.sdk_configuration = sdk_config
         
     
-    def delete_document(self, request: operations.DeleteDocumentRequest, security: operations.DeleteDocumentSecurity) -> operations.DeleteDocumentResponse:
+    def delete_document(self, request: operations.DeleteDocumentRequest) -> operations.DeleteDocumentResponse:
         r"""Delete a document
         Delete a document
         """
@@ -23,7 +23,7 @@ class Documents:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -60,7 +60,7 @@ class Documents:
         return res
 
     
-    def get_document(self, request: operations.GetDocumentRequest, security: operations.GetDocumentSecurity) -> operations.GetDocumentResponse:
+    def get_document(self, request: operations.GetDocumentRequest) -> operations.GetDocumentResponse:
         r"""Get a document
         Get information about a document
         """
@@ -71,7 +71,7 @@ class Documents:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -106,7 +106,7 @@ class Documents:
         return res
 
     
-    def list_documents(self, request: operations.ListDocumentsRequest, security: operations.ListDocumentsSecurity) -> operations.ListDocumentsResponse:
+    def list_documents(self, request: operations.ListDocumentsRequest) -> operations.ListDocumentsResponse:
         r"""List documents
         List all the documents within a company
         """
@@ -118,7 +118,7 @@ class Documents:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -147,7 +147,7 @@ class Documents:
         return res
 
     
-    def update_document(self, request: operations.UpdateDocumentRequest, security: operations.UpdateDocumentSecurity) -> operations.UpdateDocumentResponse:
+    def update_document(self, request: operations.UpdateDocumentRequest) -> operations.UpdateDocumentResponse:
         r"""Update a document
         Update a document
         """
@@ -161,7 +161,7 @@ class Documents:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

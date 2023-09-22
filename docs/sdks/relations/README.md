@@ -18,7 +18,12 @@ Create a relation
 import contractifyproduction
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.CreateRelationRequest(
     relation_write=shared.RelationWrite(
@@ -38,13 +43,10 @@ req = operations.CreateRelationRequest(
         vat='BE12345678',
         website='https://www.example.org',
     ),
-    company=521848,
+    company=105907,
 )
 
-res = s.relations.create_relation(req, operations.CreateRelationSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.relations.create_relation(req)
 
 if res.create_relation_201_application_json_object is not None:
     # handle response
@@ -52,10 +54,9 @@ if res.create_relation_201_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.CreateRelationRequest](../../models/operations/createrelationrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.CreateRelationSecurity](../../models/operations/createrelationsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.CreateRelationRequest](../../models/operations/createrelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -71,19 +72,21 @@ Delete a relation
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.DeleteRelationRequest(
-    company=105907,
-    relation=414662,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.relations.delete_relation(req, operations.DeleteRelationSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.DeleteRelationRequest(
+    company=414662,
+    relation=473600,
+)
+
+res = s.relations.delete_relation(req)
 
 if res.status_code == 200:
     # handle response
@@ -91,10 +94,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.DeleteRelationRequest](../../models/operations/deleterelationrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.DeleteRelationSecurity](../../models/operations/deleterelationsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.DeleteRelationRequest](../../models/operations/deleterelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -110,19 +112,21 @@ Get information about a relation
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.GetRelationRequest(
-    company=473600,
-    relation=264555,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.relations.get_relation(req, operations.GetRelationSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.GetRelationRequest(
+    company=264555,
+    relation=186332,
+)
+
+res = s.relations.get_relation(req)
 
 if res.get_relation_200_application_json_object is not None:
     # handle response
@@ -130,10 +134,9 @@ if res.get_relation_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.GetRelationRequest](../../models/operations/getrelationrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.GetRelationSecurity](../../models/operations/getrelationsecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.GetRelationRequest](../../models/operations/getrelationrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -149,20 +152,22 @@ List all the relations within a company
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.ListRelationsRequest(
-    company=186332,
-    page=774234,
-    reference='cum',
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.relations.list_relations(req, operations.ListRelationsSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.ListRelationsRequest(
+    company=774234,
+    page=736918,
+    reference='esse',
+)
+
+res = s.relations.list_relations(req)
 
 if res.relation_collection is not None:
     # handle response
@@ -170,10 +175,9 @@ if res.relation_collection is not None:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.ListRelationsRequest](../../models/operations/listrelationsrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.ListRelationsSecurity](../../models/operations/listrelationssecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.ListRelationsRequest](../../models/operations/listrelationsrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -191,7 +195,12 @@ Update a relation
 import contractifyproduction
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.UpdateRelationRequest(
     relation_write=shared.RelationWrite(
@@ -211,14 +220,11 @@ req = operations.UpdateRelationRequest(
         vat='BE12345678',
         website='https://www.example.org',
     ),
-    company=456150,
-    relation=216550,
+    company=216550,
+    relation=568434,
 )
 
-res = s.relations.update_relation(req, operations.UpdateRelationSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.relations.update_relation(req)
 
 if res.update_relation_200_application_json_object is not None:
     # handle response
@@ -226,10 +232,9 @@ if res.update_relation_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.UpdateRelationRequest](../../models/operations/updaterelationrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.UpdateRelationSecurity](../../models/operations/updaterelationsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.UpdateRelationRequest](../../models/operations/updaterelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response

@@ -12,18 +12,20 @@ List all the legal entities within a company
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.ListLegalEntitiesRequest(
-    company=678880,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.legal_entities.list_legal_entities(req, operations.ListLegalEntitiesSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.ListLegalEntitiesRequest(
+    company=118274,
+)
+
+res = s.legal_entities.list_legal_entities(req)
 
 if res.legal_entity_collection is not None:
     # handle response
@@ -31,10 +33,9 @@ if res.legal_entity_collection is not None:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.ListLegalEntitiesRequest](../../models/operations/listlegalentitiesrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.ListLegalEntitiesSecurity](../../models/operations/listlegalentitiessecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListLegalEntitiesRequest](../../models/operations/listlegalentitiesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response

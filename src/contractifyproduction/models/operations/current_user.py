@@ -9,15 +9,6 @@ from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
-
-@dataclasses.dataclass
-class CurrentUserSecurity:
-    o_auth2: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'oauth2', 'field_name': 'Authorization' }})
-    personal_access_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass

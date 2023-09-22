@@ -18,7 +18,12 @@ Create an office
 import contractifyproduction
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.CreateOfficeRequest(
     office_write=shared.OfficeWrite(
@@ -34,13 +39,10 @@ req = operations.CreateOfficeRequest(
         street='Polenstraat 163',
         zip='9940',
     ),
-    company=118274,
+    company=720633,
 )
 
-res = s.offices.create_office(req, operations.CreateOfficeSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.offices.create_office(req)
 
 if res.create_office_201_application_json_object is not None:
     # handle response
@@ -48,10 +50,9 @@ if res.create_office_201_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.CreateOfficeRequest](../../models/operations/createofficerequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.CreateOfficeSecurity](../../models/operations/createofficesecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.CreateOfficeRequest](../../models/operations/createofficerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
@@ -67,19 +68,21 @@ Delete an office
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.DeleteOfficeRequest(
-    company=720633,
-    office=639921,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.offices.delete_office(req, operations.DeleteOfficeSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.DeleteOfficeRequest(
+    company=639921,
+    office=582020,
+)
+
+res = s.offices.delete_office(req)
 
 if res.status_code == 200:
     # handle response
@@ -87,10 +90,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.DeleteOfficeRequest](../../models/operations/deleteofficerequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.DeleteOfficeSecurity](../../models/operations/deleteofficesecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.DeleteOfficeRequest](../../models/operations/deleteofficerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
@@ -106,19 +108,21 @@ Get information about an office
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.GetOfficeRequest(
-    company=582020,
-    office=143353,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.offices.get_office(req, operations.GetOfficeSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.GetOfficeRequest(
+    company=143353,
+    office=537373,
+)
+
+res = s.offices.get_office(req)
 
 if res.get_office_200_application_json_object is not None:
     # handle response
@@ -126,10 +130,9 @@ if res.get_office_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.GetOfficeRequest](../../models/operations/getofficerequest.md)   | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `security`                                                                   | [operations.GetOfficeSecurity](../../models/operations/getofficesecurity.md) | :heavy_check_mark:                                                           | The security requirements to use for the request.                            |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [operations.GetOfficeRequest](../../models/operations/getofficerequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
@@ -145,18 +148,20 @@ List all the offices within a company
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.ListOfficesRequest(
-    company=537373,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.offices.list_offices(req, operations.ListOfficesSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.ListOfficesRequest(
+    company=944669,
+)
+
+res = s.offices.list_offices(req)
 
 if res.office_collection is not None:
     # handle response
@@ -164,10 +169,9 @@ if res.office_collection is not None:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.ListOfficesRequest](../../models/operations/listofficesrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.ListOfficesSecurity](../../models/operations/listofficessecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.ListOfficesRequest](../../models/operations/listofficesrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -185,7 +189,12 @@ Update an office
 import contractifyproduction
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.UpdateOfficeRequest(
     office_write=shared.OfficeWrite(
@@ -201,14 +210,11 @@ req = operations.UpdateOfficeRequest(
         street='Polenstraat 163',
         zip='9940',
     ),
-    company=944669,
-    office=758616,
+    company=758616,
+    office=521848,
 )
 
-res = s.offices.update_office(req, operations.UpdateOfficeSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.offices.update_office(req)
 
 if res.update_office_200_application_json_object is not None:
     # handle response
@@ -216,10 +222,9 @@ if res.update_office_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.UpdateOfficeRequest](../../models/operations/updateofficerequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.UpdateOfficeSecurity](../../models/operations/updateofficesecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.UpdateOfficeRequest](../../models/operations/updateofficerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response

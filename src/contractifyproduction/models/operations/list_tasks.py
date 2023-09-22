@@ -11,15 +11,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ListTasksSecurity:
-    o_auth2: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'oauth2', 'field_name': 'Authorization' }})
-    personal_access_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class ListTasksRequest:
     company: int = dataclasses.field(metadata={'path_param': { 'field_name': 'company', 'style': 'simple', 'explode': False }})
     r"""Id of the company"""

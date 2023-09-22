@@ -12,18 +12,20 @@ List all the contract types within a company
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.ListContractTypesRequest(
-    company=592845,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.contract_types.list_contract_types(req, operations.ListContractTypesSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.ListContractTypesRequest(
+    company=715190,
+)
+
+res = s.contract_types.list_contract_types(req)
 
 if res.contract_type_collection is not None:
     # handle response
@@ -31,10 +33,9 @@ if res.contract_type_collection is not None:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.ListContractTypesRequest](../../models/operations/listcontracttypesrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.ListContractTypesSecurity](../../models/operations/listcontracttypessecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListContractTypesRequest](../../models/operations/listcontracttypesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response

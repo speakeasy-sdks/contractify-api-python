@@ -19,7 +19,12 @@ import contractifyproduction
 import dateutil.parser
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.CreateTaskRequest(
     task_write=shared.TaskWrite(
@@ -34,13 +39,10 @@ req = operations.CreateTaskRequest(
         status=shared.TaskWriteStatus.ACCOMPLISHED,
         title='My task',
     ),
-    company=135218,
+    company=18789,
 )
 
-res = s.tasks.create_task(req, operations.CreateTaskSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.tasks.create_task(req)
 
 if res.create_task_200_application_json_object is not None:
     # handle response
@@ -48,10 +50,9 @@ if res.create_task_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.CreateTaskRequest](../../models/operations/createtaskrequest.md)   | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.CreateTaskSecurity](../../models/operations/createtasksecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.CreateTaskRequest](../../models/operations/createtaskrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
@@ -67,19 +68,21 @@ Delete a task
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.DeleteTaskRequest(
-    company=18789,
-    task=324141,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.tasks.delete_task(req, operations.DeleteTaskSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.DeleteTaskRequest(
+    company=324141,
+    task=617636,
+)
+
+res = s.tasks.delete_task(req)
 
 if res.status_code == 200:
     # handle response
@@ -87,10 +90,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.DeleteTaskRequest](../../models/operations/deletetaskrequest.md)   | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.DeleteTaskSecurity](../../models/operations/deletetasksecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.DeleteTaskRequest](../../models/operations/deletetaskrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
@@ -106,19 +108,21 @@ Get a task
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.GetTaskRequest(
-    company=617636,
-    task=149675,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.tasks.get_task(req, operations.GetTaskSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.GetTaskRequest(
+    company=149675,
+    task=612096,
+)
+
+res = s.tasks.get_task(req)
 
 if res.get_task_200_application_json_object is not None:
     # handle response
@@ -126,10 +130,9 @@ if res.get_task_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `request`                                                                | [operations.GetTaskRequest](../../models/operations/gettaskrequest.md)   | :heavy_check_mark:                                                       | The request object to use for the request.                               |
-| `security`                                                               | [operations.GetTaskSecurity](../../models/operations/gettasksecurity.md) | :heavy_check_mark:                                                       | The security requirements to use for the request.                        |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [operations.GetTaskRequest](../../models/operations/gettaskrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response
@@ -145,19 +148,21 @@ List all tasks within a company
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.ListTasksRequest(
-    company=612096,
-    page=222321,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.tasks.list_tasks(req, operations.ListTasksSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.ListTasksRequest(
+    company=222321,
+    page=616934,
+)
+
+res = s.tasks.list_tasks(req)
 
 if res.task_collection is not None:
     # handle response
@@ -165,10 +170,9 @@ if res.task_collection is not None:
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.ListTasksRequest](../../models/operations/listtasksrequest.md)   | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `security`                                                                   | [operations.ListTasksSecurity](../../models/operations/listtaskssecurity.md) | :heavy_check_mark:                                                           | The security requirements to use for the request.                            |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [operations.ListTasksRequest](../../models/operations/listtasksrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
@@ -187,7 +191,12 @@ import contractifyproduction
 import dateutil.parser
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.UpdateTaskRequest(
     task_update=shared.TaskUpdate(
@@ -201,14 +210,11 @@ req = operations.UpdateTaskRequest(
         status=shared.TaskUpdateStatus.ACCOMPLISHED,
         title='My task',
     ),
-    company=616934,
-    task=386489,
+    company=386489,
+    task=943749,
 )
 
-res = s.tasks.update_task(req, operations.UpdateTaskSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.tasks.update_task(req)
 
 if res.update_task_200_application_json_object is not None:
     # handle response
@@ -216,10 +222,9 @@ if res.update_task_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.UpdateTaskRequest](../../models/operations/updatetaskrequest.md)   | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.UpdateTaskSecurity](../../models/operations/updatetasksecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.UpdateTaskRequest](../../models/operations/updatetaskrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response

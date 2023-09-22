@@ -12,7 +12,7 @@ class Relations:
         self.sdk_configuration = sdk_config
         
     
-    def create_relation(self, request: operations.CreateRelationRequest, security: operations.CreateRelationSecurity) -> operations.CreateRelationResponse:
+    def create_relation(self, request: operations.CreateRelationRequest) -> operations.CreateRelationResponse:
         r"""Create a relation
         Create a relation
         """
@@ -26,7 +26,7 @@ class Relations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -61,7 +61,7 @@ class Relations:
         return res
 
     
-    def delete_relation(self, request: operations.DeleteRelationRequest, security: operations.DeleteRelationSecurity) -> operations.DeleteRelationResponse:
+    def delete_relation(self, request: operations.DeleteRelationRequest) -> operations.DeleteRelationResponse:
         r"""Delete a relation
         Delete a relation
         """
@@ -72,7 +72,7 @@ class Relations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -109,7 +109,7 @@ class Relations:
         return res
 
     
-    def get_relation(self, request: operations.GetRelationRequest, security: operations.GetRelationSecurity) -> operations.GetRelationResponse:
+    def get_relation(self, request: operations.GetRelationRequest) -> operations.GetRelationResponse:
         r"""Get a relation
         Get information about a relation
         """
@@ -120,7 +120,7 @@ class Relations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -155,7 +155,7 @@ class Relations:
         return res
 
     
-    def list_relations(self, request: operations.ListRelationsRequest, security: operations.ListRelationsSecurity) -> operations.ListRelationsResponse:
+    def list_relations(self, request: operations.ListRelationsRequest) -> operations.ListRelationsResponse:
         r"""List relations
         List all the relations within a company
         """
@@ -167,7 +167,7 @@ class Relations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -196,7 +196,7 @@ class Relations:
         return res
 
     
-    def update_relation(self, request: operations.UpdateRelationRequest, security: operations.UpdateRelationSecurity) -> operations.UpdateRelationResponse:
+    def update_relation(self, request: operations.UpdateRelationRequest) -> operations.UpdateRelationResponse:
         r"""Update a relation
         Update a relation
         """
@@ -210,7 +210,7 @@ class Relations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

@@ -19,21 +19,26 @@ import contractifyproduction
 import dateutil.parser
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.CreateContractRequest(
     contract_write=shared.ContractWrite(
         contract_types=[
-            715190,
+            844266,
         ],
         custom_field_values=[
             shared.CustomFieldValueWrite(
                 custom_field_id=2,
-                value='quibusdam',
+                value='unde',
             ),
         ],
         departments=[
-            602763,
+            857946,
         ],
         documents=[
             1,
@@ -43,16 +48,16 @@ req = operations.CreateContractRequest(
         end_date=dateutil.parser.parse('2021-12-31').date(),
         is_open_ended=False,
         legal_entities=[
-            857946,
+            544883,
         ],
         name='Partnership agreement',
         offices=[
-            544883,
+            847252,
         ],
         owner_id=1,
         phase=shared.ContractPhase.ONGOING,
         relations=[
-            847252,
+            423655,
         ],
         renewal=shared.ContractRenewal(
             automatic_renewal=shared.ContractAutomaticRenewal(
@@ -68,13 +73,10 @@ req = operations.CreateContractRequest(
             termination_duration='P1M',
         ),
     ),
-    company=423655,
+    company=623564,
 )
 
-res = s.contracts.create_contract(req, operations.CreateContractSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.contracts.create_contract(req)
 
 if res.create_contract_201_application_json_object is not None:
     # handle response
@@ -82,10 +84,9 @@ if res.create_contract_201_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.CreateContractRequest](../../models/operations/createcontractrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.CreateContractSecurity](../../models/operations/createcontractsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.CreateContractRequest](../../models/operations/createcontractrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -101,19 +102,21 @@ Delete a contract
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.DeleteContractRequest(
-    company=623564,
-    contract=645894,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.contracts.delete_contract(req, operations.DeleteContractSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.DeleteContractRequest(
+    company=645894,
+    contract=384382,
+)
+
+res = s.contracts.delete_contract(req)
 
 if res.status_code == 200:
     # handle response
@@ -121,10 +124,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.DeleteContractRequest](../../models/operations/deletecontractrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.DeleteContractSecurity](../../models/operations/deletecontractsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.DeleteContractRequest](../../models/operations/deletecontractrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -140,19 +142,21 @@ Get information about a contract
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.GetContractRequest(
-    company=384382,
-    contract=437587,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.contracts.get_contract(req, operations.GetContractSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.GetContractRequest(
+    company=437587,
+    contract=297534,
+)
+
+res = s.contracts.get_contract(req)
 
 if res.get_contract_200_application_json_object is not None:
     # handle response
@@ -160,10 +164,9 @@ if res.get_contract_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.GetContractRequest](../../models/operations/getcontractrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.GetContractSecurity](../../models/operations/getcontractsecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.GetContractRequest](../../models/operations/getcontractrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -179,19 +182,21 @@ List all the contracts within a company
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.ListContractsRequest(
-    company=297534,
-    page=891773,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.contracts.list_contracts(req, operations.ListContractsSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.ListContractsRequest(
+    company=891773,
+    page=56713,
+)
+
+res = s.contracts.list_contracts(req)
 
 if res.contract_collection is not None:
     # handle response
@@ -199,10 +204,9 @@ if res.contract_collection is not None:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.ListContractsRequest](../../models/operations/listcontractsrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.ListContractsSecurity](../../models/operations/listcontractssecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.ListContractsRequest](../../models/operations/listcontractsrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -221,21 +225,26 @@ import contractifyproduction
 import dateutil.parser
 from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
 
 req = operations.UpdateContractRequest(
     contract_write=shared.ContractWrite(
         contract_types=[
-            56713,
+            963663,
         ],
         custom_field_values=[
             shared.CustomFieldValueWrite(
                 custom_field_id=2,
-                value='delectus',
+                value='tempora',
             ),
         ],
         departments=[
-            272656,
+            383441,
         ],
         documents=[
             1,
@@ -245,16 +254,16 @@ req = operations.UpdateContractRequest(
         end_date=dateutil.parser.parse('2021-12-31').date(),
         is_open_ended=False,
         legal_entities=[
-            383441,
+            477665,
         ],
         name='Partnership agreement',
         offices=[
-            477665,
+            791725,
         ],
         owner_id=1,
         phase=shared.ContractPhase.ONGOING,
         relations=[
-            791725,
+            812169,
         ],
         renewal=shared.ContractRenewal(
             automatic_renewal=shared.ContractAutomaticRenewal(
@@ -270,14 +279,11 @@ req = operations.UpdateContractRequest(
             termination_duration='P1M',
         ),
     ),
-    company=812169,
-    contract=528895,
+    company=528895,
+    contract=479977,
 )
 
-res = s.contracts.update_contract(req, operations.UpdateContractSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+res = s.contracts.update_contract(req)
 
 if res.update_contract_200_application_json_object is not None:
     # handle response
@@ -285,10 +291,9 @@ if res.update_contract_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.UpdateContractRequest](../../models/operations/updatecontractrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.UpdateContractSecurity](../../models/operations/updatecontractsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.UpdateContractRequest](../../models/operations/updatecontractrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response

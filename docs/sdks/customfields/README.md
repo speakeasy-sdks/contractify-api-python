@@ -12,18 +12,20 @@ List all the custom fields within a company
 
 ```python
 import contractifyproduction
-from contractifyproduction.models import operations
+from contractifyproduction.models import operations, shared
 
-s = contractifyproduction.ContractifyProduction()
-
-req = operations.ListCustomFieldsRequest(
-    company=479977,
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
 )
 
-res = s.custom_fields.list_custom_fields(req, operations.ListCustomFieldsSecurity(
-    o_auth2="",
-    personal_access_token="",
-))
+req = operations.ListCustomFieldsRequest(
+    company=568045,
+)
+
+res = s.custom_fields.list_custom_fields(req)
 
 if res.custom_field_collection is not None:
     # handle response
@@ -31,10 +33,9 @@ if res.custom_field_collection is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.ListCustomFieldsRequest](../../models/operations/listcustomfieldsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.ListCustomFieldsSecurity](../../models/operations/listcustomfieldssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.ListCustomFieldsRequest](../../models/operations/listcustomfieldsrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response

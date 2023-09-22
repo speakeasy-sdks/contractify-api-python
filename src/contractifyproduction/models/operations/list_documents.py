@@ -10,15 +10,6 @@ from datetime import datetime
 from enum import Enum
 from typing import Optional
 
-
-
-@dataclasses.dataclass
-class ListDocumentsSecurity:
-    o_auth2: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'oauth2', 'field_name': 'Authorization' }})
-    personal_access_token: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
 class ListDocumentsEsigningStatus(str, Enum):
     r"""Return documents currently having this status in the eSigning process, can be comma separated"""
     NOT_SENT = 'not_sent'
