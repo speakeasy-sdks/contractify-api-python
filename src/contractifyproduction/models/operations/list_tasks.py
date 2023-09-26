@@ -44,12 +44,15 @@ class ListTasks401ApplicationJSON:
 @dataclasses.dataclass
 class ListTasksResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_tasks_401_application_json_object: Optional[ListTasks401ApplicationJSON] = dataclasses.field(default=None)
     r"""Unauthenticated"""
     list_tasks_403_application_json_object: Optional[ListTasks403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     task_collection: Optional[shared_task_collection.TaskCollection] = dataclasses.field(default=None)
     r"""OK"""
     

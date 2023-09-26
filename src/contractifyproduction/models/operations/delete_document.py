@@ -74,7 +74,9 @@ class DeleteDocument401ApplicationJSON:
 @dataclasses.dataclass
 class DeleteDocumentResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_document_401_application_json_object: Optional[DeleteDocument401ApplicationJSON] = dataclasses.field(default=None)
     r"""Unauthenticated"""
     delete_document_403_application_json_object: Optional[DeleteDocument403ApplicationJSON] = dataclasses.field(default=None)
@@ -84,5 +86,6 @@ class DeleteDocumentResponse:
     delete_document_422_application_json_object: Optional[DeleteDocument422ApplicationJSON] = dataclasses.field(default=None)
     r"""Invalid data posted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

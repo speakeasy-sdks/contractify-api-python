@@ -44,12 +44,15 @@ class ListUsers401ApplicationJSON:
 @dataclasses.dataclass
 class ListUsersResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_users_401_application_json_object: Optional[ListUsers401ApplicationJSON] = dataclasses.field(default=None)
     r"""Unauthenticated"""
     list_users_403_application_json_object: Optional[ListUsers403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     user_collection: Optional[shared_user_collection.UserCollection] = dataclasses.field(default=None)
     r"""OK"""
     

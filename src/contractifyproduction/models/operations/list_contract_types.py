@@ -42,7 +42,9 @@ class ListContractTypes401ApplicationJSON:
 @dataclasses.dataclass
 class ListContractTypesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     contract_type_collection: Optional[shared_contracttype_collection.ContractTypeCollection] = dataclasses.field(default=None)
     r"""OK"""
     list_contract_types_401_application_json_object: Optional[ListContractTypes401ApplicationJSON] = dataclasses.field(default=None)
@@ -50,5 +52,6 @@ class ListContractTypesResponse:
     list_contract_types_403_application_json_object: Optional[ListContractTypes403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

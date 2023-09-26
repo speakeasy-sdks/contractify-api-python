@@ -63,7 +63,9 @@ class DeleteOffice400ApplicationJSON:
 @dataclasses.dataclass
 class DeleteOfficeResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_office_400_application_json_object: Optional[DeleteOffice400ApplicationJSON] = dataclasses.field(default=None)
     r"""Precondition failed"""
     delete_office_401_application_json_object: Optional[DeleteOffice401ApplicationJSON] = dataclasses.field(default=None)
@@ -73,5 +75,6 @@ class DeleteOfficeResponse:
     delete_office_404_application_json_object: Optional[DeleteOffice404ApplicationJSON] = dataclasses.field(default=None)
     r"""Not Found"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -64,7 +64,9 @@ class GetOffice200ApplicationJSON:
 @dataclasses.dataclass
 class GetOfficeResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_office_200_application_json_object: Optional[GetOffice200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     get_office_401_application_json_object: Optional[GetOffice401ApplicationJSON] = dataclasses.field(default=None)
@@ -74,5 +76,6 @@ class GetOfficeResponse:
     get_office_404_application_json_object: Optional[GetOffice404ApplicationJSON] = dataclasses.field(default=None)
     r"""Not Found"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

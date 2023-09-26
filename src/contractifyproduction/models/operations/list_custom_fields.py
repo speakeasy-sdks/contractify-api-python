@@ -42,7 +42,9 @@ class ListCustomFields401ApplicationJSON:
 @dataclasses.dataclass
 class ListCustomFieldsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     custom_field_collection: Optional[shared_customfield_collection.CustomFieldCollection] = dataclasses.field(default=None)
     r"""OK"""
     list_custom_fields_401_application_json_object: Optional[ListCustomFields401ApplicationJSON] = dataclasses.field(default=None)
@@ -50,5 +52,6 @@ class ListCustomFieldsResponse:
     list_custom_fields_403_application_json_object: Optional[ListCustomFields403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -42,7 +42,9 @@ class ListOffices401ApplicationJSON:
 @dataclasses.dataclass
 class ListOfficesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_offices_401_application_json_object: Optional[ListOffices401ApplicationJSON] = dataclasses.field(default=None)
     r"""Unauthenticated"""
     list_offices_403_application_json_object: Optional[ListOffices403ApplicationJSON] = dataclasses.field(default=None)
@@ -50,5 +52,6 @@ class ListOfficesResponse:
     office_collection: Optional[shared_office_collection.OfficeCollection] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

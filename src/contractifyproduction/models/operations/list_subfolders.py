@@ -42,7 +42,9 @@ class ListSubfolders401ApplicationJSON:
 @dataclasses.dataclass
 class ListSubfoldersResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     dossier_collection: Optional[shared_dossier_collection.DossierCollection] = dataclasses.field(default=None)
     r"""OK"""
     list_subfolders_401_application_json_object: Optional[ListSubfolders401ApplicationJSON] = dataclasses.field(default=None)
@@ -50,5 +52,6 @@ class ListSubfoldersResponse:
     list_subfolders_403_application_json_object: Optional[ListSubfolders403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

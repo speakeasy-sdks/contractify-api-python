@@ -42,7 +42,9 @@ class ListLegalEntities401ApplicationJSON:
 @dataclasses.dataclass
 class ListLegalEntitiesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     legal_entity_collection: Optional[shared_legalentity_collection.LegalEntityCollection] = dataclasses.field(default=None)
     r"""OK"""
     list_legal_entities_401_application_json_object: Optional[ListLegalEntities401ApplicationJSON] = dataclasses.field(default=None)
@@ -50,5 +52,6 @@ class ListLegalEntitiesResponse:
     list_legal_entities_403_application_json_object: Optional[ListLegalEntities403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

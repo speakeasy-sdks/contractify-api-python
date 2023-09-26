@@ -64,7 +64,9 @@ class GetTask200ApplicationJSON:
 @dataclasses.dataclass
 class GetTaskResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_task_200_application_json_object: Optional[GetTask200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     get_task_401_application_json_object: Optional[GetTask401ApplicationJSON] = dataclasses.field(default=None)
@@ -74,5 +76,6 @@ class GetTaskResponse:
     get_task_404_application_json_object: Optional[GetTask404ApplicationJSON] = dataclasses.field(default=None)
     r"""Not Found"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

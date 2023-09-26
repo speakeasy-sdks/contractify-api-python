@@ -75,7 +75,9 @@ class CreateContract201ApplicationJSON:
 @dataclasses.dataclass
 class CreateContractResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_contract_201_application_json_object: Optional[CreateContract201ApplicationJSON] = dataclasses.field(default=None)
     r"""Created"""
     create_contract_401_application_json_object: Optional[CreateContract401ApplicationJSON] = dataclasses.field(default=None)
@@ -85,5 +87,6 @@ class CreateContractResponse:
     create_contract_422_application_json_object: Optional[CreateContract422ApplicationJSON] = dataclasses.field(default=None)
     r"""Invalid data posted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

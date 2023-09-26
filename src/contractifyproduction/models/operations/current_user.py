@@ -43,7 +43,9 @@ class CurrentUser200ApplicationJSON:
 @dataclasses.dataclass
 class CurrentUserResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     current_user_200_application_json_object: Optional[CurrentUser200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     current_user_401_application_json_object: Optional[CurrentUser401ApplicationJSON] = dataclasses.field(default=None)
@@ -51,5 +53,6 @@ class CurrentUserResponse:
     current_user_403_application_json_object: Optional[CurrentUser403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

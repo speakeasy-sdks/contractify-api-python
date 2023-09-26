@@ -42,7 +42,9 @@ class ListDepartments401ApplicationJSON:
 @dataclasses.dataclass
 class ListDepartmentsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     department_collection: Optional[shared_department_collection.DepartmentCollection] = dataclasses.field(default=None)
     r"""OK"""
     list_departments_401_application_json_object: Optional[ListDepartments401ApplicationJSON] = dataclasses.field(default=None)
@@ -50,5 +52,6 @@ class ListDepartmentsResponse:
     list_departments_403_application_json_object: Optional[ListDepartments403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

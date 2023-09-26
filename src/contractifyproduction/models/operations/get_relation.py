@@ -64,7 +64,9 @@ class GetRelation200ApplicationJSON:
 @dataclasses.dataclass
 class GetRelationResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_relation_200_application_json_object: Optional[GetRelation200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     get_relation_401_application_json_object: Optional[GetRelation401ApplicationJSON] = dataclasses.field(default=None)
@@ -74,5 +76,6 @@ class GetRelationResponse:
     get_relation_404_application_json_object: Optional[GetRelation404ApplicationJSON] = dataclasses.field(default=None)
     r"""Not Found"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

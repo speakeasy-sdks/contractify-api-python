@@ -63,7 +63,9 @@ class DeleteContract400ApplicationJSON:
 @dataclasses.dataclass
 class DeleteContractResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_contract_400_application_json_object: Optional[DeleteContract400ApplicationJSON] = dataclasses.field(default=None)
     r"""Precondition failed"""
     delete_contract_401_application_json_object: Optional[DeleteContract401ApplicationJSON] = dataclasses.field(default=None)
@@ -73,5 +75,6 @@ class DeleteContractResponse:
     delete_contract_404_application_json_object: Optional[DeleteContract404ApplicationJSON] = dataclasses.field(default=None)
     r"""Not Found"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

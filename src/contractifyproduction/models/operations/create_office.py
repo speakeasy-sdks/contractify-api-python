@@ -75,7 +75,9 @@ class CreateOffice201ApplicationJSON:
 @dataclasses.dataclass
 class CreateOfficeResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_office_201_application_json_object: Optional[CreateOffice201ApplicationJSON] = dataclasses.field(default=None)
     r"""Created"""
     create_office_401_application_json_object: Optional[CreateOffice401ApplicationJSON] = dataclasses.field(default=None)
@@ -85,5 +87,6 @@ class CreateOfficeResponse:
     create_office_422_application_json_object: Optional[CreateOffice422ApplicationJSON] = dataclasses.field(default=None)
     r"""Invalid data posted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

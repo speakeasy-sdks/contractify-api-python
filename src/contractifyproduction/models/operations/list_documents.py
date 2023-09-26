@@ -65,7 +65,9 @@ class ListDocuments401ApplicationJSON:
 @dataclasses.dataclass
 class ListDocumentsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     document_collection: Optional[shared_document_collection.DocumentCollection] = dataclasses.field(default=None)
     r"""OK"""
     list_documents_401_application_json_object: Optional[ListDocuments401ApplicationJSON] = dataclasses.field(default=None)
@@ -73,5 +75,6 @@ class ListDocumentsResponse:
     list_documents_403_application_json_object: Optional[ListDocuments403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

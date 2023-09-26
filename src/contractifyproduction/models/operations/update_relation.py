@@ -87,8 +87,11 @@ class UpdateRelation200ApplicationJSON:
 @dataclasses.dataclass
 class UpdateRelationResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     update_relation_200_application_json_object: Optional[UpdateRelation200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     update_relation_401_application_json_object: Optional[UpdateRelation401ApplicationJSON] = dataclasses.field(default=None)

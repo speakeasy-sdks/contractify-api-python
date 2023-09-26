@@ -53,7 +53,9 @@ class DeleteTask401ApplicationJSON:
 @dataclasses.dataclass
 class DeleteTaskResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_task_401_application_json_object: Optional[DeleteTask401ApplicationJSON] = dataclasses.field(default=None)
     r"""Unauthenticated"""
     delete_task_403_application_json_object: Optional[DeleteTask403ApplicationJSON] = dataclasses.field(default=None)
@@ -61,5 +63,6 @@ class DeleteTaskResponse:
     delete_task_404_application_json_object: Optional[DeleteTask404ApplicationJSON] = dataclasses.field(default=None)
     r"""Not Found"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

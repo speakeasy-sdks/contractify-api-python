@@ -75,7 +75,9 @@ class CreateTask200ApplicationJSON:
 @dataclasses.dataclass
 class CreateTaskResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_task_200_application_json_object: Optional[CreateTask200ApplicationJSON] = dataclasses.field(default=None)
     r"""OK"""
     create_task_401_application_json_object: Optional[CreateTask401ApplicationJSON] = dataclasses.field(default=None)
@@ -85,5 +87,6 @@ class CreateTaskResponse:
     create_task_422_application_json_object: Optional[CreateTask422ApplicationJSON] = dataclasses.field(default=None)
     r"""Invalid data posted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

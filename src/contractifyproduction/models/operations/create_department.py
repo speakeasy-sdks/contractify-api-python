@@ -75,7 +75,9 @@ class CreateDepartment201ApplicationJSON:
 @dataclasses.dataclass
 class CreateDepartmentResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_department_201_application_json_object: Optional[CreateDepartment201ApplicationJSON] = dataclasses.field(default=None)
     r"""Created"""
     create_department_401_application_json_object: Optional[CreateDepartment401ApplicationJSON] = dataclasses.field(default=None)
@@ -85,5 +87,6 @@ class CreateDepartmentResponse:
     create_department_422_application_json_object: Optional[CreateDepartment422ApplicationJSON] = dataclasses.field(default=None)
     r"""Invalid data posted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

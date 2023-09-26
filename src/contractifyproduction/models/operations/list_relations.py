@@ -46,12 +46,15 @@ class ListRelations401ApplicationJSON:
 @dataclasses.dataclass
 class ListRelationsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_relations_401_application_json_object: Optional[ListRelations401ApplicationJSON] = dataclasses.field(default=None)
     r"""Unauthenticated"""
     list_relations_403_application_json_object: Optional[ListRelations403ApplicationJSON] = dataclasses.field(default=None)
     r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     relation_collection: Optional[shared_relation_collection.RelationCollection] = dataclasses.field(default=None)
     r"""OK"""
     

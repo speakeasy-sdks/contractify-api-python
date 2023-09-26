@@ -63,7 +63,9 @@ class DeleteRelation400ApplicationJSON:
 @dataclasses.dataclass
 class DeleteRelationResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_relation_400_application_json_object: Optional[DeleteRelation400ApplicationJSON] = dataclasses.field(default=None)
     r"""Precondition failed"""
     delete_relation_401_application_json_object: Optional[DeleteRelation401ApplicationJSON] = dataclasses.field(default=None)
@@ -73,5 +75,6 @@ class DeleteRelationResponse:
     delete_relation_404_application_json_object: Optional[DeleteRelation404ApplicationJSON] = dataclasses.field(default=None)
     r"""Not Found"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
