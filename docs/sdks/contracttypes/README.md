@@ -1,4 +1,5 @@
 # ContractTypes
+(*contract_types*)
 
 ### Available Operations
 
