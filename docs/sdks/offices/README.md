@@ -40,7 +40,7 @@ req = operations.CreateOfficeRequest(
         street='Polenstraat 163',
         zip='9940',
     ),
-    company=720633,
+    company=244393,
 )
 
 res = s.offices.create_office(req)
@@ -79,8 +79,8 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.DeleteOfficeRequest(
-    company=639921,
-    office=582020,
+    company=327183,
+    office=668605,
 )
 
 res = s.offices.delete_office(req)
@@ -119,8 +119,8 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.GetOfficeRequest(
-    company=143353,
-    office=537373,
+    company=616050,
+    office=134885,
 )
 
 res = s.offices.get_office(req)
@@ -159,7 +159,7 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.ListOfficesRequest(
-    company=944669,
+    company=303557,
 )
 
 res = s.offices.list_offices(req)
@@ -211,8 +211,8 @@ req = operations.UpdateOfficeRequest(
         street='Polenstraat 163',
         zip='9940',
     ),
-    company=758616,
-    office=521848,
+    company=989026,
+    office=647378,
 )
 
 res = s.offices.update_office(req)

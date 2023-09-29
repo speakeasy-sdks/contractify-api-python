@@ -30,7 +30,7 @@ req = operations.CreateDepartmentRequest(
     department_write=shared.DepartmentWrite(
         name='Sales',
     ),
-    company=392785,
+    company=33324,
 )
 
 res = s.departments.create_department(req)
@@ -69,8 +69,8 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.DeleteDepartmentRequest(
-    company=925597,
-    department=836079,
+    company=701942,
+    department=751163,
 )
 
 res = s.departments.delete_department(req)
@@ -109,8 +109,8 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.GetDepartmentRequest(
-    company=71036,
-    department=337396,
+    company=255130,
+    department=855529,
 )
 
 res = s.departments.get_department(req)
@@ -149,7 +149,7 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.ListDepartmentsRequest(
-    company=87129,
+    company=117069,
 )
 
 res = s.departments.list_departments(req)
@@ -191,8 +191,8 @@ req = operations.UpdateDepartmentRequest(
     department_write=shared.DepartmentWrite(
         name='Sales',
     ),
-    company=648172,
-    department=20218,
+    company=431122,
+    department=2342,
 )
 
 res = s.departments.update_department(req)

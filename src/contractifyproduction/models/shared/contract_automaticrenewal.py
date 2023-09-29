@@ -11,7 +11,7 @@ from typing import Optional
 
 @dataclasses.dataclass
 class ContractAutomaticRenewal:
-    number_of_renewals: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_renewals'), 'exclude': lambda f: f is None }})
-    renewal_period: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renewal_period'), 'exclude': lambda f: f is None }})
+    number_of_renewals: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_renewals') }})
+    renewal_period: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renewal_period') }})
     
 

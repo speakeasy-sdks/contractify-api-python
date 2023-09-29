@@ -44,7 +44,7 @@ req = operations.CreateRelationRequest(
         vat='BE12345678',
         website='https://www.example.org',
     ),
-    company=105907,
+    company=528070,
 )
 
 res = s.relations.create_relation(req)
@@ -83,8 +83,8 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.DeleteRelationRequest(
-    company=414662,
-    relation=473600,
+    company=773418,
+    relation=890630,
 )
 
 res = s.relations.delete_relation(req)
@@ -123,8 +123,8 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.GetRelationRequest(
-    company=264555,
-    relation=186332,
+    company=734058,
+    relation=979643,
 )
 
 res = s.relations.get_relation(req)
@@ -163,9 +163,9 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.ListRelationsRequest(
-    company=774234,
-    page=736918,
-    reference='esse',
+    company=454135,
+    page=761434,
+    reference='systemic South',
 )
 
 res = s.relations.list_relations(req)
@@ -221,8 +221,8 @@ req = operations.UpdateRelationRequest(
         vat='BE12345678',
         website='https://www.example.org',
     ),
-    company=216550,
-    relation=568434,
+    company=573397,
+    relation=281147,
 )
 
 res = s.relations.update_relation(req)

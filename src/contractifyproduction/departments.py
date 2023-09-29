@@ -20,11 +20,11 @@ class Departments:
         
         url = utils.generate_url(operations.CreateDepartmentRequest, base_url, '/api/companies/{company}/departments', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "department_write", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "department_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -70,7 +70,7 @@ class Departments:
         url = utils.generate_url(operations.DeleteDepartmentRequest, base_url, '/api/companies/{company}/departments/{department}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -118,7 +118,7 @@ class Departments:
         url = utils.generate_url(operations.GetDepartmentRequest, base_url, '/api/companies/{company}/departments/{department}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -164,7 +164,7 @@ class Departments:
         url = utils.generate_url(operations.ListDepartmentsRequest, base_url, '/api/companies/{company}/departments', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -203,11 +203,11 @@ class Departments:
         
         url = utils.generate_url(operations.UpdateDepartmentRequest, base_url, '/api/companies/{company}/departments/{department}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "department_write", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "department_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

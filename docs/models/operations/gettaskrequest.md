@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `company`          | *int*              | :heavy_check_mark: | Id of the company  |
-| `task`             | *int*              | :heavy_check_mark: | Id of the task     |
+| `company`          | *Optional[int]*    | :heavy_check_mark: | Id of the company  |
+| `task`             | *Optional[int]*    | :heavy_check_mark: | Id of the task     |

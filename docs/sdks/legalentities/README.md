@@ -23,7 +23,7 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.ListLegalEntitiesRequest(
-    company=118274,
+    company=730248,
 )
 
 res = s.legal_entities.list_legal_entities(req)

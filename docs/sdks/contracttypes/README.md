@@ -23,7 +23,7 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.ListContractTypesRequest(
-    company=715190,
+    company=839467,
 )
 
 res = s.contract_types.list_contract_types(req)

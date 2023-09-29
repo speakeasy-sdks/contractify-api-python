@@ -40,7 +40,7 @@ req = operations.CreateTaskRequest(
         status=shared.TaskWriteStatus.ACCOMPLISHED,
         title='My task',
     ),
-    company=18789,
+    company=296904,
 )
 
 res = s.tasks.create_task(req)
@@ -79,8 +79,8 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.DeleteTaskRequest(
-    company=324141,
-    task=617636,
+    company=357574,
+    task=394977,
 )
 
 res = s.tasks.delete_task(req)
@@ -119,8 +119,8 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.GetTaskRequest(
-    company=149675,
-    task=612096,
+    company=717011,
+    task=649018,
 )
 
 res = s.tasks.get_task(req)
@@ -159,8 +159,8 @@ s = contractifyproduction.ContractifyProduction(
 )
 
 req = operations.ListTasksRequest(
-    company=222321,
-    page=616934,
+    company=715197,
+    page=192941,
 )
 
 res = s.tasks.list_tasks(req)
@@ -211,8 +211,8 @@ req = operations.UpdateTaskRequest(
         status=shared.TaskUpdateStatus.ACCOMPLISHED,
         title='My task',
     ),
-    company=386489,
-    task=943749,
+    company=449699,
+    task=675064,
 )
 
 res = s.tasks.update_task(req)

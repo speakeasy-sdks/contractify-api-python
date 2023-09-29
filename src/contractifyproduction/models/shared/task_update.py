@@ -24,16 +24,16 @@ class TaskUpdateStatus(str, Enum):
 
 @dataclasses.dataclass
 class TaskUpdate:
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-    due_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
+    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
+    due_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
     r"""Will be overwritten if `due_date_depends_on` and `due_date_interval` are passed"""
-    due_date_depends_on: Optional[TaskUpdateDueDateDependsOn] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date_depends_on'), 'exclude': lambda f: f is None }})
+    due_date_depends_on: Optional[TaskUpdateDueDateDependsOn] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date_depends_on') }})
     r"""Will only be accepted if you pass a `contract_id`"""
-    due_date_interval: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date_interval'), 'exclude': lambda f: f is None }})
+    due_date_interval: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date_interval') }})
     r"""Will only be accepted if you pass a `contract_id`"""
     owner_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('owner_id'), 'exclude': lambda f: f is None }})
-    reminder_duration: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reminder_duration'), 'exclude': lambda f: f is None }})
-    repetition_interval: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('repetition_interval'), 'exclude': lambda f: f is None }})
+    reminder_duration: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reminder_duration') }})
+    repetition_interval: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('repetition_interval') }})
     status: Optional[TaskUpdateStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
     

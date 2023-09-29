@@ -12,6 +12,6 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class CustomFieldValueWrite:
     custom_field_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_field_id'), 'exclude': lambda f: f is None }})
-    value: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
+    value: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     
 

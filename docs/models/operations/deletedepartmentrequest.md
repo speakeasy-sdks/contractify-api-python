@@ -5,5 +5,5 @@
 
 | Field                | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
-| `company`            | *int*                | :heavy_check_mark:   | Id of the company    |
-| `department`         | *int*                | :heavy_check_mark:   | Id of the department |
+| `company`            | *Optional[int]*      | :heavy_check_mark:   | Id of the company    |
+| `department`         | *Optional[int]*      | :heavy_check_mark:   | Id of the department |
