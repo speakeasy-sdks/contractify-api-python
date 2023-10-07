@@ -108,11 +108,6 @@ s = contractifyproduction.ContractifyProduction(
 
 req = operations.ListDocumentsRequest(
     company=581480,
-    esigning_status=operations.ListDocumentsEsigningStatus.LEGAL_DECLINED,
-    esigning_updated_after=dateutil.parser.isoparse('2022-04-10T07:42:42.736Z'),
-    page=893340,
-    relation_id=873217,
-    signed_after=dateutil.parser.isoparse('2021-04-10T09:49:45.540Z'),
 )
 
 res = s.documents.list_documents(req)
@@ -158,7 +153,7 @@ req = operations.UpdateDocumentRequest(
         custom_field_values=[
             shared.CustomFieldValueWrite(
                 custom_field_id=2,
-                value='Product',
+                value='software',
             ),
         ],
         description='Lorem ipsum dolor sit amet.',
@@ -168,8 +163,8 @@ req = operations.UpdateDocumentRequest(
         name='filename.pdf',
         owner_id=1,
     ),
-    company=659951,
-    document=513682,
+    company=653381,
+    document=312704,
 )
 
 res = s.documents.update_document(req)

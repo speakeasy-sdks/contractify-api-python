@@ -301,3 +301,11 @@ Based on:
 - Speakeasy CLI 1.94.0 (2.147.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.25.2] .
+
+## 2023-10-07 00:26:45
+### Changes
+Based on:
+- OpenAPI Doc 2022-08-16 
+- Speakeasy CLI 1.96.1 (2.150.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.26.0] .

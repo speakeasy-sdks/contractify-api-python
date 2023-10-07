@@ -164,8 +164,6 @@ s = contractifyproduction.ContractifyProduction(
 
 req = operations.ListRelationsRequest(
     company=454135,
-    page=761434,
-    reference='systemic South',
 )
 
 res = s.relations.list_relations(req)

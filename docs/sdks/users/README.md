@@ -55,7 +55,6 @@ s = contractifyproduction.ContractifyProduction(
 
 req = operations.ListUsersRequest(
     company=606239,
-    page=283983,
 )
 
 res = s.users.list_users(req)
