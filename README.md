@@ -29,6 +29,7 @@ res = s.contract_types.list_contract_types(req)
 
 if res.contract_type_collection is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 

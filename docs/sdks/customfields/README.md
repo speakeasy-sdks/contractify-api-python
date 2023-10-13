@@ -30,6 +30,7 @@ res = s.custom_fields.list_custom_fields(req)
 
 if res.custom_field_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

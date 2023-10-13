@@ -30,6 +30,7 @@ res = s.subfolders.list_subfolders(req)
 
 if res.dossier_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

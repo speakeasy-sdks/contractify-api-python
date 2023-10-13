@@ -37,6 +37,7 @@ res = s.departments.create_department(req)
 
 if res.create_department_201_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -77,6 +78,7 @@ res = s.departments.delete_department(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -117,6 +119,7 @@ res = s.departments.get_department(req)
 
 if res.get_department_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -156,6 +159,7 @@ res = s.departments.list_departments(req)
 
 if res.department_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -199,6 +203,7 @@ res = s.departments.update_department(req)
 
 if res.update_department_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

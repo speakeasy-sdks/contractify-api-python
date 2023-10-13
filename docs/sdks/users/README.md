@@ -28,6 +28,7 @@ res = s.users.current_user()
 
 if res.current_user_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -61,6 +62,7 @@ res = s.users.list_users(req)
 
 if res.user_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

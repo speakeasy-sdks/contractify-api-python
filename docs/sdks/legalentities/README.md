@@ -30,6 +30,7 @@ res = s.legal_entities.list_legal_entities(req)
 
 if res.legal_entity_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -47,6 +47,7 @@ res = s.offices.create_office(req)
 
 if res.create_office_201_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,6 +88,7 @@ res = s.offices.delete_office(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -127,6 +129,7 @@ res = s.offices.get_office(req)
 
 if res.get_office_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -166,6 +169,7 @@ res = s.offices.list_offices(req)
 
 if res.office_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -219,6 +223,7 @@ res = s.offices.update_office(req)
 
 if res.update_office_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

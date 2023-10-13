@@ -51,6 +51,7 @@ res = s.relations.create_relation(req)
 
 if res.create_relation_201_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -91,6 +92,7 @@ res = s.relations.delete_relation(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -131,6 +133,7 @@ res = s.relations.get_relation(req)
 
 if res.get_relation_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -170,6 +173,7 @@ res = s.relations.list_relations(req)
 
 if res.relation_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -227,6 +231,7 @@ res = s.relations.update_relation(req)
 
 if res.update_relation_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -83,6 +83,7 @@ res = s.contracts.create_contract(req)
 
 if res.create_contract_201_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -123,6 +124,7 @@ res = s.contracts.delete_contract(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -163,6 +165,7 @@ res = s.contracts.get_contract(req)
 
 if res.get_contract_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -202,6 +205,7 @@ res = s.contracts.list_contracts(req)
 
 if res.contract_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -291,6 +295,7 @@ res = s.contracts.update_contract(req)
 
 if res.update_contract_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

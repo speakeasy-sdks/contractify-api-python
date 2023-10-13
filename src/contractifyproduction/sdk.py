@@ -80,7 +80,7 @@ class ContractifyProduction:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 o_auth2: str,
+                 security: shared.Security = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -89,8 +89,8 @@ class ContractifyProduction:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
-        :param o_auth2: The o_auth2 required for authentication
-        :type o_auth2: str
+        :param security: The security details required for authentication
+        :type security: shared.Security
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations

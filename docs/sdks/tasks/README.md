@@ -47,6 +47,7 @@ res = s.tasks.create_task(req)
 
 if res.create_task_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,6 +88,7 @@ res = s.tasks.delete_task(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -127,6 +129,7 @@ res = s.tasks.get_task(req)
 
 if res.get_task_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -166,6 +169,7 @@ res = s.tasks.list_tasks(req)
 
 if res.task_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -218,6 +222,7 @@ res = s.tasks.update_task(req)
 
 if res.update_task_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

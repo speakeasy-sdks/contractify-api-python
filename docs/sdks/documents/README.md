@@ -34,6 +34,7 @@ res = s.documents.delete_document(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -74,6 +75,7 @@ res = s.documents.get_document(req)
 
 if res.get_document_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -114,6 +116,7 @@ res = s.documents.list_documents(req)
 
 if res.document_collection is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -171,6 +174,7 @@ res = s.documents.update_document(req)
 
 if res.update_document_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
