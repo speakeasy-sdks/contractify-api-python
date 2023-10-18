@@ -9,7 +9,6 @@ from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetDocumentRequest:
     company: int = dataclasses.field(metadata={'path_param': { 'field_name': 'company', 'style': 'simple', 'explode': False }})
@@ -21,7 +20,6 @@ class GetDocumentRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetDocument404ApplicationJSON:
     r"""Not Found"""
@@ -31,7 +29,6 @@ class GetDocument404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetDocument403ApplicationJSON:
     r"""Forbidden"""
@@ -41,7 +38,6 @@ class GetDocument403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetDocument401ApplicationJSON:
     r"""Unauthenticated"""
@@ -51,13 +47,11 @@ class GetDocument401ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetDocument200ApplicationJSON:
     r"""OK"""
     data: Optional[shared_document_read.DocumentRead] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-
 
 
 

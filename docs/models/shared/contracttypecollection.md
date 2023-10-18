@@ -5,4 +5,4 @@
 
 | Field                                                             | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `data`                                                            | list[[ContractTypeRead](../../models/shared/contracttyperead.md)] | :heavy_minus_sign:                                                | N/A                                                               |
+| `data`                                                            | List[[ContractTypeRead](../../models/shared/contracttyperead.md)] | :heavy_minus_sign:                                                | N/A                                                               |

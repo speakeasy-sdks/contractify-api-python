@@ -9,7 +9,6 @@ from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ListDepartmentsRequest:
     company: int = dataclasses.field(metadata={'path_param': { 'field_name': 'company', 'style': 'simple', 'explode': False }})
@@ -19,7 +18,6 @@ class ListDepartmentsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ListDepartments403ApplicationJSON:
     r"""Forbidden"""
@@ -29,13 +27,11 @@ class ListDepartments403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ListDepartments401ApplicationJSON:
     r"""Unauthenticated"""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-
 
 
 

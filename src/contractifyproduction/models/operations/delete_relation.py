@@ -8,7 +8,6 @@ from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteRelationRequest:
     company: int = dataclasses.field(metadata={'path_param': { 'field_name': 'company', 'style': 'simple', 'explode': False }})
@@ -20,7 +19,6 @@ class DeleteRelationRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteRelation404ApplicationJSON:
     r"""Not Found"""
@@ -30,7 +28,6 @@ class DeleteRelation404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteRelation403ApplicationJSON:
     r"""Forbidden"""
@@ -40,7 +37,6 @@ class DeleteRelation403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteRelation401ApplicationJSON:
     r"""Unauthenticated"""
@@ -50,13 +46,11 @@ class DeleteRelation401ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteRelation400ApplicationJSON:
     r"""Precondition failed"""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-
 
 
 

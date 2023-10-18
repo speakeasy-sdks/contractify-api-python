@@ -22,7 +22,6 @@ class ListDocumentsEsigningStatus(str, Enum):
     REVOKED = 'revoked'
 
 
-
 @dataclasses.dataclass
 class ListDocumentsRequest:
     company: int = dataclasses.field(metadata={'path_param': { 'field_name': 'company', 'style': 'simple', 'explode': False }})
@@ -42,7 +41,6 @@ class ListDocumentsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ListDocuments403ApplicationJSON:
     r"""Forbidden"""
@@ -52,13 +50,11 @@ class ListDocuments403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ListDocuments401ApplicationJSON:
     r"""Unauthenticated"""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-
 
 
 

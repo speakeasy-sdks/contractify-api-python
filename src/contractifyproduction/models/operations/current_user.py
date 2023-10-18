@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CurrentUser403ApplicationJSON:
     r"""Forbidden"""
@@ -20,7 +19,6 @@ class CurrentUser403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CurrentUser401ApplicationJSON:
     r"""Unauthenticated"""
@@ -30,13 +28,11 @@ class CurrentUser401ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CurrentUser200ApplicationJSON:
     r"""OK"""
     data: Optional[shared_user_current.UserCurrent] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-
 
 
 

@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ContractRenewal:
     automatic_renewal: Optional[shared_contract_automaticrenewal.ContractAutomaticRenewal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automatic_renewal'), 'exclude': lambda f: f is None }})

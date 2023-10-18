@@ -9,7 +9,6 @@ from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetContractRequest:
     company: int = dataclasses.field(metadata={'path_param': { 'field_name': 'company', 'style': 'simple', 'explode': False }})
@@ -21,7 +20,6 @@ class GetContractRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetContract404ApplicationJSON:
     r"""Not Found"""
@@ -31,7 +29,6 @@ class GetContract404ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetContract403ApplicationJSON:
     r"""Forbidden"""
@@ -41,7 +38,6 @@ class GetContract403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetContract401ApplicationJSON:
     r"""Unauthenticated"""
@@ -51,13 +47,11 @@ class GetContract401ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetContract200ApplicationJSON:
     r"""OK"""
     data: Optional[shared_contract_read.ContractRead] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-
 
 
 

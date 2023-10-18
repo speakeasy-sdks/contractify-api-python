@@ -5,4 +5,4 @@
 
 | Field                                                           | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `data`                                                          | list[[LegalEntityRead](../../models/shared/legalentityread.md)] | :heavy_minus_sign:                                              | N/A                                                             |
+| `data`                                                          | List[[LegalEntityRead](../../models/shared/legalentityread.md)] | :heavy_minus_sign:                                              | N/A                                                             |

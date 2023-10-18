@@ -5,4 +5,4 @@
 
 | Field                                                         | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `data`                                                        | list[[DepartmentRead](../../models/shared/departmentread.md)] | :heavy_minus_sign:                                            | N/A                                                           |
+| `data`                                                        | List[[DepartmentRead](../../models/shared/departmentread.md)] | :heavy_minus_sign:                                            | N/A                                                           |
