@@ -1,0 +1,14 @@
+# Pagination
+
+
+## Fields
+
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 | Example                                                     |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `current_page`                                              | *Optional[int]*                                             | :heavy_minus_sign:                                          | N/A                                                         | 1                                                           |
+| `from_`                                                     | *Optional[int]*                                             | :heavy_minus_sign:                                          | N/A                                                         | 1                                                           |
+| `last_page`                                                 | *Optional[int]*                                             | :heavy_minus_sign:                                          | N/A                                                         | 1                                                           |
+| `path`                                                      | *Optional[str]*                                             | :heavy_minus_sign:                                          | N/A                                                         | https://app.contractify.be/api/companies/{company}/endpoint |
+| `per_page`                                                  | *Optional[int]*                                             | :heavy_minus_sign:                                          | N/A                                                         | 100                                                         |
+| `to`                                                        | *Optional[int]*                                             | :heavy_minus_sign:                                          | N/A                                                         | 1                                                           |
+| `total`                                                     | *Optional[int]*                                             | :heavy_minus_sign:                                          | N/A                                                         | 1                                                           |

@@ -1,0 +1,10 @@
+# ContractTermination
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `is_terminable_at_any_time`                                                  | *Optional[bool]*                                                             | :heavy_minus_sign:                                                           | N/A                                                                          |                                                                              |
+| `termination_date`                                                           | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects) | :heavy_minus_sign:                                                           | N/A                                                                          | 2021-11-30                                                                   |
+| `termination_duration`                                                       | *Optional[str]*                                                              | :heavy_minus_sign:                                                           | N/A                                                                          | P1M                                                                          |

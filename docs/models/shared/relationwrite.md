@@ -1,0 +1,16 @@
+# RelationWrite
+
+
+## Fields
+
+| Field                                               | Type                                                | Required                                            | Description                                         | Example                                             |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `address`                                           | [Optional[Address]](../../models/shared/address.md) | :heavy_minus_sign:                                  | N/A                                                 |                                                     |
+| `email`                                             | *Optional[str]*                                     | :heavy_minus_sign:                                  | N/A                                                 | sherlock@example.org                                |
+| `fax`                                               | *Optional[str]*                                     | :heavy_minus_sign:                                  | N/A                                                 | +3211324354                                         |
+| `mobile_phone`                                      | *Optional[str]*                                     | :heavy_minus_sign:                                  | N/A                                                 | +23477123456                                        |
+| `name`                                              | *str*                                               | :heavy_check_mark:                                  | N/A                                                 | Sherlock Holmes Detective Services                  |
+| `phone`                                             | *Optional[str]*                                     | :heavy_minus_sign:                                  | N/A                                                 | +23477123456                                        |
+| `reference`                                         | *Optional[str]*                                     | :heavy_minus_sign:                                  | N/A                                                 | REF123                                              |
+| `vat`                                               | *Optional[str]*                                     | :heavy_minus_sign:                                  | N/A                                                 | BE12345678                                          |
+| `website`                                           | *Optional[str]*                                     | :heavy_minus_sign:                                  | N/A                                                 | https://www.example.org                             |
