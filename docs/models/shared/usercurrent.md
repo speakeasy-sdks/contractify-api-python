@@ -1,0 +1,12 @@
+# UserCurrent
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `companies_where_admin`                                              | List[[CompanyRead](../../models/shared/companyread.md)]              | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |
+| `created_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |
+| `email`                                                              | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  | john@example.org                                                     |
+| `id`                                                                 | *Optional[int]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  | 1                                                                    |
+| `name`                                                               | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  | John Doe                                                             |
