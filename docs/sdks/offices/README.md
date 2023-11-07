@@ -1,5 +1,5 @@
 # Offices
-(*offices*)
+(*.offices*)
 
 ### Available Operations
 
@@ -45,7 +45,7 @@ req = operations.CreateOfficeRequest(
 
 res = s.offices.create_office(req)
 
-if res.create_office_201_application_json_object is not None:
+if res.two_hundred_and_one_application_json_object is not None:
     # handle response
     pass
 ```
@@ -127,7 +127,7 @@ req = operations.GetOfficeRequest(
 
 res = s.offices.get_office(req)
 
-if res.get_office_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -221,7 +221,7 @@ req = operations.UpdateOfficeRequest(
 
 res = s.offices.update_office(req)
 
-if res.update_office_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```

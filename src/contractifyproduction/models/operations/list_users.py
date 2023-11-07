@@ -3,9 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import user_collection as shared_user_collection
-from contractifyproduction import utils
-from dataclasses_json import Undefined, dataclass_json
+from ...models.shared import user_collection as shared_user_collection
 from typing import Optional
 
 
@@ -19,34 +17,12 @@ class ListUsersRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ListUsers403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ListUsers401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
 @dataclasses.dataclass
 class ListUsersResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    list_users_401_application_json_object: Optional[ListUsers401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    list_users_403_application_json_object: Optional[ListUsers403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     user_collection: Optional[shared_user_collection.UserCollection] = dataclasses.field(default=None)

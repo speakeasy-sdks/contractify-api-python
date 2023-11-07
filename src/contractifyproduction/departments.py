@@ -35,28 +35,33 @@ class Departments:
         
         if http_res.status_code == 201:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateDepartment201ApplicationJSON])
-                res.create_department_201_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateDepartmentResponseBody])
+                res.two_hundred_and_one_application_json_object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateDepartment401ApplicationJSON])
-                res.create_department_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.CreateDepartmentResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateDepartment403ApplicationJSON])
-                res.create_department_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.CreateDepartmentDepartmentsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 422:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateDepartment422ApplicationJSON])
-                res.create_department_422_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.CreateDepartmentDepartmentsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -83,28 +88,34 @@ class Departments:
             pass
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteDepartment400ApplicationJSON])
-                res.delete_department_400_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteDepartmentResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteDepartment401ApplicationJSON])
-                res.delete_department_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteDepartmentDepartmentsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteDepartment403ApplicationJSON])
-                res.delete_department_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteDepartmentDepartmentsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteDepartment404ApplicationJSON])
-                res.delete_department_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.DeleteDepartmentDepartmentsResponse404ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -129,28 +140,33 @@ class Departments:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetDepartment200ApplicationJSON])
-                res.get_department_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetDepartmentResponseBody])
+                res.two_hundred_application_json_object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetDepartment401ApplicationJSON])
-                res.get_department_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetDepartmentResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetDepartment403ApplicationJSON])
-                res.get_department_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetDepartmentDepartmentsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetDepartment404ApplicationJSON])
-                res.get_department_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.GetDepartmentDepartmentsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -181,16 +197,20 @@ class Departments:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.ListDepartments401ApplicationJSON])
-                res.list_departments_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.ListDepartmentsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.ListDepartments403ApplicationJSON])
-                res.list_departments_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.ListDepartmentsDepartmentsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -218,34 +238,40 @@ class Departments:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateDepartment200ApplicationJSON])
-                res.update_department_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateDepartmentResponseBody])
+                res.two_hundred_application_json_object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateDepartment401ApplicationJSON])
-                res.update_department_401_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.UpdateDepartmentResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateDepartment403ApplicationJSON])
-                res.update_department_403_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.UpdateDepartmentDepartmentsResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateDepartment404ApplicationJSON])
-                res.update_department_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.UpdateDepartmentDepartmentsResponseResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 422:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateDepartment422ApplicationJSON])
-                res.update_department_422_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, errors.UpdateDepartmentDepartmentsResponse422ResponseBody)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import office_read as shared_office_read
-from ..shared import office_write as shared_office_write
+from ...models.shared import office_read as shared_office_read
+from ...models.shared import office_write as shared_office_write
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import List, Optional
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -21,44 +21,7 @@ class CreateOfficeRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateOffice422ApplicationJSONErrors:
-    errors: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateOffice422ApplicationJSON:
-    r"""Invalid data posted"""
-    errors: Optional[List[CreateOffice422ApplicationJSONErrors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateOffice403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateOffice401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateOffice201ApplicationJSON:
+class CreateOfficeResponseBody:
     r"""Created"""
     data: Optional[shared_office_read.OfficeRead] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -71,14 +34,8 @@ class CreateOfficeResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_office_201_application_json_object: Optional[CreateOffice201ApplicationJSON] = dataclasses.field(default=None)
+    two_hundred_and_one_application_json_object: Optional[CreateOfficeResponseBody] = dataclasses.field(default=None)
     r"""Created"""
-    create_office_401_application_json_object: Optional[CreateOffice401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    create_office_403_application_json_object: Optional[CreateOffice403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
-    create_office_422_application_json_object: Optional[CreateOffice422ApplicationJSON] = dataclasses.field(default=None)
-    r"""Invalid data posted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

@@ -1,5 +1,5 @@
 # Tasks
-(*tasks*)
+(*.tasks*)
 
 ### Available Operations
 
@@ -45,7 +45,7 @@ req = operations.CreateTaskRequest(
 
 res = s.tasks.create_task(req)
 
-if res.create_task_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -127,7 +127,7 @@ req = operations.GetTaskRequest(
 
 res = s.tasks.get_task(req)
 
-if res.get_task_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -220,7 +220,7 @@ req = operations.UpdateTaskRequest(
 
 res = s.tasks.update_task(req)
 
-if res.update_task_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```

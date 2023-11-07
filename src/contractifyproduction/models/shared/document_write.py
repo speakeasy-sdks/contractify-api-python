@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import customfieldvalue_write as shared_customfieldvalue_write
+from .customfieldvalue_write import CustomFieldValueWrite
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -13,7 +13,7 @@ from typing import List, Optional
 class DocumentWrite:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     contracts: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contracts'), 'exclude': lambda f: f is None }})
-    custom_field_values: Optional[List[shared_customfieldvalue_write.CustomFieldValueWrite]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_field_values') }})
+    custom_field_values: Optional[List[CustomFieldValueWrite]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_field_values') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     dossiers: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dossiers') }})
     owner_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('owner_id') }})

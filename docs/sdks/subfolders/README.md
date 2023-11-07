@@ -1,5 +1,5 @@
 # Subfolders
-(*subfolders*)
+(*.subfolders*)
 
 ### Available Operations
 

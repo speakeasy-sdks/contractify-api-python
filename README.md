@@ -15,7 +15,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 pip install git+https://github.com/speakeasy-sdks/contractify-api-python.git
@@ -24,8 +24,6 @@ pip install git+https://github.com/speakeasy-sdks/contractify-api-python.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import contractifyproduction
 from contractifyproduction.models import operations, shared
@@ -50,14 +48,14 @@ if res.contract_type_collection is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [contract_types](docs/sdks/contracttypes/README.md)
+### [.contract_types](docs/sdks/contracttypes/README.md)
 
 * [list_contract_types](docs/sdks/contracttypes/README.md#list_contract_types) - List contract types
 
-## [contracts](docs/sdks/contracts/README.md)
+### [.contracts](docs/sdks/contracts/README.md)
 
 * [create_contract](docs/sdks/contracts/README.md#create_contract) - Create a contract
 * [delete_contract](docs/sdks/contracts/README.md#delete_contract) - Delete a contract
@@ -65,11 +63,11 @@ if res.contract_type_collection is not None:
 * [list_contracts](docs/sdks/contracts/README.md#list_contracts) - List contracts
 * [update_contract](docs/sdks/contracts/README.md#update_contract) - Update a contract
 
-## [custom_fields](docs/sdks/customfields/README.md)
+### [.custom_fields](docs/sdks/customfields/README.md)
 
 * [list_custom_fields](docs/sdks/customfields/README.md#list_custom_fields) - List custom fields
 
-## [departments](docs/sdks/departments/README.md)
+### [.departments](docs/sdks/departments/README.md)
 
 * [create_department](docs/sdks/departments/README.md#create_department) - Create a department
 * [delete_department](docs/sdks/departments/README.md#delete_department) - Delete a department
@@ -77,18 +75,22 @@ if res.contract_type_collection is not None:
 * [list_departments](docs/sdks/departments/README.md#list_departments) - List departments
 * [update_department](docs/sdks/departments/README.md#update_department) - Update a department
 
-## [documents](docs/sdks/documents/README.md)
+### [.documents](docs/sdks/documents/README.md)
 
 * [delete_document](docs/sdks/documents/README.md#delete_document) - Delete a document
 * [get_document](docs/sdks/documents/README.md#get_document) - Get a document
 * [list_documents](docs/sdks/documents/README.md#list_documents) - List documents
 * [update_document](docs/sdks/documents/README.md#update_document) - Update a document
 
-## [legal_entities](docs/sdks/legalentities/README.md)
+### [.subfolders](docs/sdks/subfolders/README.md)
+
+* [list_subfolders](docs/sdks/subfolders/README.md#list_subfolders) - List subfolders
+
+### [.legal_entities](docs/sdks/legalentities/README.md)
 
 * [list_legal_entities](docs/sdks/legalentities/README.md#list_legal_entities) - List legal entities
 
-## [offices](docs/sdks/offices/README.md)
+### [.offices](docs/sdks/offices/README.md)
 
 * [create_office](docs/sdks/offices/README.md#create_office) - Create an office
 * [delete_office](docs/sdks/offices/README.md#delete_office) - Delete an office
@@ -96,7 +98,7 @@ if res.contract_type_collection is not None:
 * [list_offices](docs/sdks/offices/README.md#list_offices) - List offices
 * [update_office](docs/sdks/offices/README.md#update_office) - Update an office
 
-## [relations](docs/sdks/relations/README.md)
+### [.relations](docs/sdks/relations/README.md)
 
 * [create_relation](docs/sdks/relations/README.md#create_relation) - Create a relation
 * [delete_relation](docs/sdks/relations/README.md#delete_relation) - Delete a relation
@@ -104,11 +106,7 @@ if res.contract_type_collection is not None:
 * [list_relations](docs/sdks/relations/README.md#list_relations) - List relations
 * [update_relation](docs/sdks/relations/README.md#update_relation) - Update a relation
 
-## [subfolders](docs/sdks/subfolders/README.md)
-
-* [list_subfolders](docs/sdks/subfolders/README.md#list_subfolders) - List subfolders
-
-## [tasks](docs/sdks/tasks/README.md)
+### [.tasks](docs/sdks/tasks/README.md)
 
 * [create_task](docs/sdks/tasks/README.md#create_task) - Create a task
 * [delete_task](docs/sdks/tasks/README.md#delete_task) - Delete a task
@@ -116,15 +114,13 @@ if res.contract_type_collection is not None:
 * [list_tasks](docs/sdks/tasks/README.md#list_tasks) - List tasks
 * [update_task](docs/sdks/tasks/README.md#update_task) - Update a task
 
-## [users](docs/sdks/users/README.md)
+### [.users](docs/sdks/users/README.md)
 
 * [current_user](docs/sdks/users/README.md#current_user) - Current User
 * [list_users](docs/sdks/users/README.md#list_users) - List users
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -134,6 +130,37 @@ if res.contract_type_collection is not None:
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
 
+## Example
+
+```python
+import contractifyproduction
+from contractifyproduction.models import operations, shared
+
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
+
+req = operations.ListContractTypesRequest(
+    company=839467,
+)
+
+res = None
+try:
+    res = s.contract_types.list_contract_types(req)
+
+except (401_application/json_object) as e:
+    print(e) # handle exception
+except (403_application/json_object) as e:
+    print(e) # handle exception
+
+
+if res.contract_type_collection is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
@@ -149,17 +176,16 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import contractifyproduction
 from contractifyproduction.models import operations, shared
 
 s = contractifyproduction.ContractifyProduction(
+    server_idx=0,
     security=shared.Security(
         o_auth2="",
         personal_access_token="",
     ),
-    server_idx=0
 )
 
 req = operations.ListContractTypesRequest(
@@ -178,17 +204,16 @@ if res.contract_type_collection is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import contractifyproduction
 from contractifyproduction.models import operations, shared
 
 s = contractifyproduction.ContractifyProduction(
+    server_url="https://app.contractify.be",
     security=shared.Security(
         o_auth2="",
         personal_access_token="",
     ),
-    server_url="https://app.contractify.be"
 )
 
 req = operations.ListContractTypesRequest(
@@ -219,9 +244,47 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = contractifyproduction.ContractifyProduction(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security schemes globally:
+
+| Name                    | Type                    | Scheme                  |
+| ----------------------- | ----------------------- | ----------------------- |
+| `o_auth2`               | oauth2                  | OAuth2 token            |
+| `personal_access_token` | http                    | HTTP Bearer             |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+
+```python
+import contractifyproduction
+from contractifyproduction.models import operations, shared
+
+s = contractifyproduction.ContractifyProduction(
+    security=shared.Security(
+        o_auth2="",
+        personal_access_token="",
+    ),
+)
+
+req = operations.ListContractTypesRequest(
+    company=839467,
+)
+
+res = s.contract_types.list_contract_types(req)
+
+if res.contract_type_collection is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

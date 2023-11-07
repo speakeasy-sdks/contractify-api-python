@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import relation_read as shared_relation_read
-from ..shared import relation_write as shared_relation_write
+from ...models.shared import relation_read as shared_relation_read
+from ...models.shared import relation_write as shared_relation_write
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import List, Optional
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -21,44 +21,7 @@ class CreateRelationRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateRelation422ApplicationJSONErrors:
-    errors: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateRelation422ApplicationJSON:
-    r"""Invalid data posted"""
-    errors: Optional[List[CreateRelation422ApplicationJSONErrors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateRelation403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateRelation401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateRelation201ApplicationJSON:
+class CreateRelationResponseBody:
     r"""Created"""
     data: Optional[shared_relation_read.RelationRead] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -71,14 +34,8 @@ class CreateRelationResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_relation_201_application_json_object: Optional[CreateRelation201ApplicationJSON] = dataclasses.field(default=None)
+    two_hundred_and_one_application_json_object: Optional[CreateRelationResponseBody] = dataclasses.field(default=None)
     r"""Created"""
-    create_relation_401_application_json_object: Optional[CreateRelation401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    create_relation_403_application_json_object: Optional[CreateRelation403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
-    create_relation_422_application_json_object: Optional[CreateRelation422ApplicationJSON] = dataclasses.field(default=None)
-    r"""Invalid data posted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

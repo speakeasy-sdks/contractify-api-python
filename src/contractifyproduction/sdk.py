@@ -71,10 +71,10 @@ class ContractifyProduction:
     custom_fields: CustomFields
     departments: Departments
     documents: Documents
+    subfolders: Subfolders
     legal_entities: LegalEntities
     offices: Offices
     relations: Relations
-    subfolders: Subfolders
     tasks: Tasks
     users: Users
 
@@ -124,10 +124,10 @@ class ContractifyProduction:
         self.custom_fields = CustomFields(self.sdk_configuration)
         self.departments = Departments(self.sdk_configuration)
         self.documents = Documents(self.sdk_configuration)
+        self.subfolders = Subfolders(self.sdk_configuration)
         self.legal_entities = LegalEntities(self.sdk_configuration)
         self.offices = Offices(self.sdk_configuration)
         self.relations = Relations(self.sdk_configuration)
-        self.subfolders = Subfolders(self.sdk_configuration)
         self.tasks = Tasks(self.sdk_configuration)
         self.users = Users(self.sdk_configuration)
     

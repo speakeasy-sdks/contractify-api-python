@@ -3,9 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import office_collection as shared_office_collection
-from contractifyproduction import utils
-from dataclasses_json import Undefined, dataclass_json
+from ...models.shared import office_collection as shared_office_collection
 from typing import Optional
 
 
@@ -17,34 +15,12 @@ class ListOfficesRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ListOffices403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ListOffices401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
 @dataclasses.dataclass
 class ListOfficesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    list_offices_401_application_json_object: Optional[ListOffices401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    list_offices_403_application_json_object: Optional[ListOffices403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
     office_collection: Optional[shared_office_collection.OfficeCollection] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

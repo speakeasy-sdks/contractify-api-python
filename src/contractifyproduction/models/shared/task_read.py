@@ -8,12 +8,12 @@ from datetime import date
 from enum import Enum
 from typing import Optional
 
-class TaskReadDueDateDependsOn(str, Enum):
+class DueDateDependsOn(str, Enum):
     TERMINATION_DATE = 'termination_date'
     END_DATE = 'end_date'
     START_DATE = 'start_date'
 
-class TaskReadStatus(str, Enum):
+class Status(str, Enum):
     ACCOMPLISHED = 'accomplished'
     NOT_ACCOMPLISHED = 'not_accomplished'
     IN_PROGRESS = 'in_progress'
@@ -25,7 +25,7 @@ class TaskRead:
     contract_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract_id') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     due_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
-    due_date_depends_on: Optional[TaskReadDueDateDependsOn] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date_depends_on') }})
+    due_date_depends_on: Optional[DueDateDependsOn] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date_depends_on') }})
     due_date_interval: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date_interval') }})
     escalation_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('escalation_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
     id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -34,7 +34,7 @@ class TaskRead:
     reminder_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reminder_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
     reminder_duration: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reminder_duration') }})
     repetition_interval: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('repetition_interval') }})
-    status: Optional[TaskReadStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[Status] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
     
 

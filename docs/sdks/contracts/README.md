@@ -1,5 +1,5 @@
 # Contracts
-(*contracts*)
+(*.contracts*)
 
 ### Available Operations
 
@@ -81,7 +81,7 @@ req = operations.CreateContractRequest(
 
 res = s.contracts.create_contract(req)
 
-if res.create_contract_201_application_json_object is not None:
+if res.two_hundred_and_one_application_json_object is not None:
     # handle response
     pass
 ```
@@ -163,7 +163,7 @@ req = operations.GetContractRequest(
 
 res = s.contracts.get_contract(req)
 
-if res.get_contract_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -293,7 +293,7 @@ req = operations.UpdateContractRequest(
 
 res = s.contracts.update_contract(req)
 
-if res.update_contract_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```

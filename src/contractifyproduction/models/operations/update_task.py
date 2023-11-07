@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import task_read as shared_task_read
-from ..shared import task_update as shared_task_update
+from ...models.shared import task_read as shared_task_read
+from ...models.shared import task_update as shared_task_update
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import List, Optional
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -23,53 +23,7 @@ class UpdateTaskRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UpdateTask422ApplicationJSONErrors:
-    errors: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateTask422ApplicationJSON:
-    r"""Invalid data posted"""
-    errors: Optional[List[UpdateTask422ApplicationJSONErrors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateTask404ApplicationJSON:
-    r"""Not Found"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateTask403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateTask401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateTask200ApplicationJSON:
+class UpdateTaskResponseBody:
     r"""OK"""
     data: Optional[shared_task_read.TaskRead] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -82,17 +36,9 @@ class UpdateTaskResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    two_hundred_application_json_object: Optional[UpdateTaskResponseBody] = dataclasses.field(default=None)
+    r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    update_task_200_application_json_object: Optional[UpdateTask200ApplicationJSON] = dataclasses.field(default=None)
-    r"""OK"""
-    update_task_401_application_json_object: Optional[UpdateTask401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    update_task_403_application_json_object: Optional[UpdateTask403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
-    update_task_404_application_json_object: Optional[UpdateTask404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Not Found"""
-    update_task_422_application_json_object: Optional[UpdateTask422ApplicationJSON] = dataclasses.field(default=None)
-    r"""Invalid data posted"""
     
 

@@ -1,5 +1,5 @@
 # Documents
-(*documents*)
+(*.documents*)
 
 ### Available Operations
 
@@ -73,7 +73,7 @@ req = operations.GetDocumentRequest(
 
 res = s.documents.get_document(req)
 
-if res.get_document_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -172,7 +172,7 @@ req = operations.UpdateDocumentRequest(
 
 res = s.documents.update_document(req)
 
-if res.update_document_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```

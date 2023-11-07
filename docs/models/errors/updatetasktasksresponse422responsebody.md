@@ -1,0 +1,12 @@
+# UpdateTaskTasksResponse422ResponseBody
+
+Invalid data posted
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           | Example                                                                               |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `raw_response`                                                                        | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) | :heavy_minus_sign:                                                                    | Raw HTTP response; suitable for custom response parsing                               |                                                                                       |
+| `errors`                                                                              | List[[errors.UpdateTaskErrors](../../models/errors/updatetaskerrors.md)]              | :heavy_minus_sign:                                                                    | N/A                                                                                   |                                                                                       |
+| `message`                                                                             | *Optional[str]*                                                                       | :heavy_minus_sign:                                                                    | N/A                                                                                   | The given data was invalid.                                                           |

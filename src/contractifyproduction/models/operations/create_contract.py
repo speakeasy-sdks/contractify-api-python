@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import contract_read as shared_contract_read
-from ..shared import contract_write as shared_contract_write
+from ...models.shared import contract_read as shared_contract_read
+from ...models.shared import contract_write as shared_contract_write
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import List, Optional
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -21,44 +21,7 @@ class CreateContractRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateContract422ApplicationJSONErrors:
-    errors: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateContract422ApplicationJSON:
-    r"""Invalid data posted"""
-    errors: Optional[List[CreateContract422ApplicationJSONErrors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateContract403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateContract401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateContract201ApplicationJSON:
+class CreateContractResponseBody:
     r"""Created"""
     data: Optional[shared_contract_read.ContractRead] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -71,14 +34,8 @@ class CreateContractResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_contract_201_application_json_object: Optional[CreateContract201ApplicationJSON] = dataclasses.field(default=None)
+    two_hundred_and_one_application_json_object: Optional[CreateContractResponseBody] = dataclasses.field(default=None)
     r"""Created"""
-    create_contract_401_application_json_object: Optional[CreateContract401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    create_contract_403_application_json_object: Optional[CreateContract403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
-    create_contract_422_application_json_object: Optional[CreateContract422ApplicationJSON] = dataclasses.field(default=None)
-    r"""Invalid data posted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

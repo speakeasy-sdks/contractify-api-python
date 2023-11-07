@@ -1,5 +1,5 @@
 # Relations
-(*relations*)
+(*.relations*)
 
 ### Available Operations
 
@@ -49,7 +49,7 @@ req = operations.CreateRelationRequest(
 
 res = s.relations.create_relation(req)
 
-if res.create_relation_201_application_json_object is not None:
+if res.two_hundred_and_one_application_json_object is not None:
     # handle response
     pass
 ```
@@ -131,7 +131,7 @@ req = operations.GetRelationRequest(
 
 res = s.relations.get_relation(req)
 
-if res.get_relation_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -229,7 +229,7 @@ req = operations.UpdateRelationRequest(
 
 res = s.relations.update_relation(req)
 
-if res.update_relation_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```

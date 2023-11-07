@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import task_read as shared_task_read
-from ..shared import task_write as shared_task_write
+from ...models.shared import task_read as shared_task_read
+from ...models.shared import task_write as shared_task_write
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import List, Optional
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -21,44 +21,7 @@ class CreateTaskRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateTask422ApplicationJSONErrors:
-    errors: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateTask422ApplicationJSON:
-    r"""Invalid data posted"""
-    errors: Optional[List[CreateTask422ApplicationJSONErrors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateTask403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateTask401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateTask200ApplicationJSON:
+class CreateTaskResponseBody:
     r"""OK"""
     data: Optional[shared_task_read.TaskRead] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -71,14 +34,8 @@ class CreateTaskResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_task_200_application_json_object: Optional[CreateTask200ApplicationJSON] = dataclasses.field(default=None)
+    two_hundred_application_json_object: Optional[CreateTaskResponseBody] = dataclasses.field(default=None)
     r"""OK"""
-    create_task_401_application_json_object: Optional[CreateTask401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    create_task_403_application_json_object: Optional[CreateTask403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
-    create_task_422_application_json_object: Optional[CreateTask422ApplicationJSON] = dataclasses.field(default=None)
-    r"""Invalid data posted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import contract_read as shared_contract_read
-from ..shared import contract_write as shared_contract_write
+from ...models.shared import contract_read as shared_contract_read
+from ...models.shared import contract_write as shared_contract_write
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import List, Optional
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -23,53 +23,7 @@ class UpdateContractRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UpdateContract422ApplicationJSONErrors:
-    errors: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateContract422ApplicationJSON:
-    r"""Invalid data posted"""
-    errors: Optional[List[UpdateContract422ApplicationJSONErrors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateContract404ApplicationJSON:
-    r"""Not Found"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateContract403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateContract401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UpdateContract200ApplicationJSON:
+class UpdateContractResponseBody:
     r"""OK"""
     data: Optional[shared_contract_read.ContractRead] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -82,17 +36,9 @@ class UpdateContractResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    two_hundred_application_json_object: Optional[UpdateContractResponseBody] = dataclasses.field(default=None)
+    r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    update_contract_200_application_json_object: Optional[UpdateContract200ApplicationJSON] = dataclasses.field(default=None)
-    r"""OK"""
-    update_contract_401_application_json_object: Optional[UpdateContract401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    update_contract_403_application_json_object: Optional[UpdateContract403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
-    update_contract_404_application_json_object: Optional[UpdateContract404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Not Found"""
-    update_contract_422_application_json_object: Optional[UpdateContract422ApplicationJSON] = dataclasses.field(default=None)
-    r"""Invalid data posted"""
     
 

@@ -3,14 +3,12 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import document_collection as shared_document_collection
-from contractifyproduction import utils
-from dataclasses_json import Undefined, dataclass_json
+from ...models.shared import document_collection as shared_document_collection
 from datetime import datetime
 from enum import Enum
 from typing import Optional
 
-class ListDocumentsEsigningStatus(str, Enum):
+class EsigningStatus(str, Enum):
     r"""Return documents currently having this status in the eSigning process, can be comma separated"""
     NOT_SENT = 'not_sent'
     SENT_TO_LEGAL = 'sent_to_legal'
@@ -26,7 +24,7 @@ class ListDocumentsEsigningStatus(str, Enum):
 class ListDocumentsRequest:
     company: int = dataclasses.field(metadata={'path_param': { 'field_name': 'company', 'style': 'simple', 'explode': False }})
     r"""Id of the company"""
-    esigning_status: Optional[ListDocumentsEsigningStatus] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'esigning_status', 'style': 'form', 'explode': True }})
+    esigning_status: Optional[EsigningStatus] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'esigning_status', 'style': 'form', 'explode': True }})
     r"""Return documents currently having this status in the eSigning process, can be comma separated"""
     esigning_updated_after: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'esigning_updated_after', 'style': 'form', 'explode': True }})
     r"""Return documents where e-signing was updated after the given date"""
@@ -40,24 +38,6 @@ class ListDocumentsRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ListDocuments403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ListDocuments401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
 @dataclasses.dataclass
 class ListDocumentsResponse:
     content_type: str = dataclasses.field()
@@ -66,10 +46,6 @@ class ListDocumentsResponse:
     r"""HTTP response status code for this operation"""
     document_collection: Optional[shared_document_collection.DocumentCollection] = dataclasses.field(default=None)
     r"""OK"""
-    list_documents_401_application_json_object: Optional[ListDocuments401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    list_documents_403_application_json_object: Optional[ListDocuments403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

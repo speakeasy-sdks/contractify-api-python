@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import customfield_read as shared_customfield_read
-from ..shared import pagination as shared_pagination
+from .customfield_read import CustomFieldRead
+from .pagination import Pagination
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
 from typing import List, Optional
@@ -12,7 +12,7 @@ from typing import List, Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CustomFieldCollection:
-    data: Optional[List[shared_customfield_read.CustomFieldRead]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-    meta: Optional[shared_pagination.Pagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
+    data: Optional[List[CustomFieldRead]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    meta: Optional[Pagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
     
 

@@ -3,8 +3,6 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from contractifyproduction import utils
-from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
@@ -18,56 +16,12 @@ class DeleteDepartmentRequest:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteDepartment404ApplicationJSON:
-    r"""Not Found"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteDepartment403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteDepartment401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class DeleteDepartment400ApplicationJSON:
-    r"""Precondition failed"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
 @dataclasses.dataclass
 class DeleteDepartmentResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_department_400_application_json_object: Optional[DeleteDepartment400ApplicationJSON] = dataclasses.field(default=None)
-    r"""Precondition failed"""
-    delete_department_401_application_json_object: Optional[DeleteDepartment401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    delete_department_403_application_json_object: Optional[DeleteDepartment403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
-    delete_department_404_application_json_object: Optional[DeleteDepartment404ApplicationJSON] = dataclasses.field(default=None)
-    r"""Not Found"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

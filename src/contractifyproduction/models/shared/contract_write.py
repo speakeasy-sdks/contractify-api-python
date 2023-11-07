@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import contract_phase as shared_contract_phase
-from ..shared import contract_renewal as shared_contract_renewal
-from ..shared import contract_termination as shared_contract_termination
-from ..shared import customfieldvalue_write as shared_customfieldvalue_write
+from .contract_phase import ContractPhase
+from .contract_renewal import ContractRenewal
+from .contract_termination import ContractTermination
+from .customfieldvalue_write import CustomFieldValueWrite
 from contractifyproduction import utils
 from dataclasses_json import Undefined, dataclass_json
 from datetime import date
@@ -18,7 +18,7 @@ class ContractWrite:
     dossier_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dossier_id') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     contract_types: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract_types') }})
-    custom_field_values: Optional[List[shared_customfieldvalue_write.CustomFieldValueWrite]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_field_values') }})
+    custom_field_values: Optional[List[CustomFieldValueWrite]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_field_values') }})
     departments: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('departments') }})
     documents: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('documents'), 'exclude': lambda f: f is None }})
     duration: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('duration') }})
@@ -27,10 +27,10 @@ class ContractWrite:
     legal_entities: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legal_entities') }})
     offices: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offices') }})
     owner_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('owner_id') }})
-    phase: Optional[shared_contract_phase.ContractPhase] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phase') }})
+    phase: Optional[ContractPhase] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phase') }})
     relations: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations') }})
-    renewal: Optional[shared_contract_renewal.ContractRenewal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renewal'), 'exclude': lambda f: f is None }})
+    renewal: Optional[ContractRenewal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renewal'), 'exclude': lambda f: f is None }})
     start_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat }})
-    termination: Optional[shared_contract_termination.ContractTermination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termination'), 'exclude': lambda f: f is None }})
+    termination: Optional[ContractTermination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termination'), 'exclude': lambda f: f is None }})
     
 

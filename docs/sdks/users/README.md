@@ -1,5 +1,5 @@
 # Users
-(*users*)
+(*.users*)
 
 ### Available Operations
 
@@ -26,7 +26,7 @@ s = contractifyproduction.ContractifyProduction(
 
 res = s.users.current_user()
 
-if res.current_user_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```

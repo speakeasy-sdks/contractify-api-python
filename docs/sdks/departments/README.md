@@ -1,5 +1,5 @@
 # Departments
-(*departments*)
+(*.departments*)
 
 ### Available Operations
 
@@ -35,7 +35,7 @@ req = operations.CreateDepartmentRequest(
 
 res = s.departments.create_department(req)
 
-if res.create_department_201_application_json_object is not None:
+if res.two_hundred_and_one_application_json_object is not None:
     # handle response
     pass
 ```
@@ -117,7 +117,7 @@ req = operations.GetDepartmentRequest(
 
 res = s.departments.get_department(req)
 
-if res.get_department_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```
@@ -201,7 +201,7 @@ req = operations.UpdateDepartmentRequest(
 
 res = s.departments.update_department(req)
 
-if res.update_department_200_application_json_object is not None:
+if res.two_hundred_application_json_object is not None:
     # handle response
     pass
 ```

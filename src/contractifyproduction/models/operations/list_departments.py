@@ -3,9 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import department_collection as shared_department_collection
-from contractifyproduction import utils
-from dataclasses_json import Undefined, dataclass_json
+from ...models.shared import department_collection as shared_department_collection
 from typing import Optional
 
 
@@ -13,24 +11,6 @@ from typing import Optional
 class ListDepartmentsRequest:
     company: int = dataclasses.field(metadata={'path_param': { 'field_name': 'company', 'style': 'simple', 'explode': False }})
     r"""Id of the company"""
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ListDepartments403ApplicationJSON:
-    r"""Forbidden"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class ListDepartments401ApplicationJSON:
-    r"""Unauthenticated"""
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
 
@@ -43,10 +23,6 @@ class ListDepartmentsResponse:
     r"""HTTP response status code for this operation"""
     department_collection: Optional[shared_department_collection.DepartmentCollection] = dataclasses.field(default=None)
     r"""OK"""
-    list_departments_401_application_json_object: Optional[ListDepartments401ApplicationJSON] = dataclasses.field(default=None)
-    r"""Unauthenticated"""
-    list_departments_403_application_json_object: Optional[ListDepartments403ApplicationJSON] = dataclasses.field(default=None)
-    r"""Forbidden"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     
