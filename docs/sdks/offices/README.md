@@ -1,5 +1,5 @@
 # Offices
-(*.offices*)
+(*offices*)
 
 ### Available Operations
 
@@ -60,7 +60,14 @@ if res.two_hundred_and_one_application_json_object is not None:
 ### Response
 
 **[operations.CreateOfficeResponse](../../models/operations/createofficeresponse.md)**
+### Errors
 
+| Error Object                                   | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| errors.CreateOfficeResponseBody                | 401                                            | application/json                               |
+| errors.CreateOfficeOfficesResponseBody         | 403                                            | application/json                               |
+| errors.CreateOfficeOfficesResponseResponseBody | 422                                            | application/json                               |
+| errors.SDKError                                | 400-600                                        | */*                                            |
 
 ## delete_office
 
@@ -101,7 +108,15 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteOfficeResponse](../../models/operations/deleteofficeresponse.md)**
+### Errors
 
+| Error Object                                      | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.DeleteOfficeResponseBody                   | 400                                               | application/json                                  |
+| errors.DeleteOfficeOfficesResponseBody            | 401                                               | application/json                                  |
+| errors.DeleteOfficeOfficesResponseResponseBody    | 403                                               | application/json                                  |
+| errors.DeleteOfficeOfficesResponse404ResponseBody | 404                                               | application/json                                  |
+| errors.SDKError                                   | 400-600                                           | */*                                               |
 
 ## get_office
 
@@ -142,7 +157,14 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.GetOfficeResponse](../../models/operations/getofficeresponse.md)**
+### Errors
 
+| Error Object                                | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| errors.GetOfficeResponseBody                | 401                                         | application/json                            |
+| errors.GetOfficeOfficesResponseBody         | 403                                         | application/json                            |
+| errors.GetOfficeOfficesResponseResponseBody | 404                                         | application/json                            |
+| errors.SDKError                             | 400-600                                     | */*                                         |
 
 ## list_offices
 
@@ -182,7 +204,13 @@ if res.office_collection is not None:
 ### Response
 
 **[operations.ListOfficesResponse](../../models/operations/listofficesresponse.md)**
+### Errors
 
+| Error Object                          | Status Code                           | Content Type                          |
+| ------------------------------------- | ------------------------------------- | ------------------------------------- |
+| errors.ListOfficesResponseBody        | 401                                   | application/json                      |
+| errors.ListOfficesOfficesResponseBody | 403                                   | application/json                      |
+| errors.SDKError                       | 400-600                               | */*                                   |
 
 ## update_office
 
@@ -236,4 +264,12 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.UpdateOfficeResponse](../../models/operations/updateofficeresponse.md)**
+### Errors
 
+| Error Object                                      | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.UpdateOfficeResponseBody                   | 401                                               | application/json                                  |
+| errors.UpdateOfficeOfficesResponseBody            | 403                                               | application/json                                  |
+| errors.UpdateOfficeOfficesResponseResponseBody    | 404                                               | application/json                                  |
+| errors.UpdateOfficeOfficesResponse422ResponseBody | 422                                               | application/json                                  |
+| errors.SDKError                                   | 400-600                                           | */*                                               |

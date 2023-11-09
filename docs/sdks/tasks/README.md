@@ -1,5 +1,5 @@
 # Tasks
-(*.tasks*)
+(*tasks*)
 
 ### Available Operations
 
@@ -60,7 +60,14 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.CreateTaskResponse](../../models/operations/createtaskresponse.md)**
+### Errors
 
+| Error Object                               | Status Code                                | Content Type                               |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| errors.CreateTaskResponseBody              | 401                                        | application/json                           |
+| errors.CreateTaskTasksResponseBody         | 403                                        | application/json                           |
+| errors.CreateTaskTasksResponseResponseBody | 422                                        | application/json                           |
+| errors.SDKError                            | 400-600                                    | */*                                        |
 
 ## delete_task
 
@@ -101,7 +108,14 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteTaskResponse](../../models/operations/deletetaskresponse.md)**
+### Errors
 
+| Error Object                               | Status Code                                | Content Type                               |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| errors.DeleteTaskResponseBody              | 401                                        | application/json                           |
+| errors.DeleteTaskTasksResponseBody         | 403                                        | application/json                           |
+| errors.DeleteTaskTasksResponseResponseBody | 404                                        | application/json                           |
+| errors.SDKError                            | 400-600                                    | */*                                        |
 
 ## get_task
 
@@ -142,7 +156,14 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.GetTaskResponse](../../models/operations/gettaskresponse.md)**
+### Errors
 
+| Error Object                            | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| errors.GetTaskResponseBody              | 401                                     | application/json                        |
+| errors.GetTaskTasksResponseBody         | 403                                     | application/json                        |
+| errors.GetTaskTasksResponseResponseBody | 404                                     | application/json                        |
+| errors.SDKError                         | 400-600                                 | */*                                     |
 
 ## list_tasks
 
@@ -182,7 +203,13 @@ if res.task_collection is not None:
 ### Response
 
 **[operations.ListTasksResponse](../../models/operations/listtasksresponse.md)**
+### Errors
 
+| Error Object                      | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| errors.ListTasksResponseBody      | 401                               | application/json                  |
+| errors.ListTasksTasksResponseBody | 403                               | application/json                  |
+| errors.SDKError                   | 400-600                           | */*                               |
 
 ## update_task
 
@@ -235,4 +262,12 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.UpdateTaskResponse](../../models/operations/updatetaskresponse.md)**
+### Errors
 
+| Error Object                                  | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.UpdateTaskResponseBody                 | 401                                           | application/json                              |
+| errors.UpdateTaskTasksResponseBody            | 403                                           | application/json                              |
+| errors.UpdateTaskTasksResponseResponseBody    | 404                                           | application/json                              |
+| errors.UpdateTaskTasksResponse422ResponseBody | 422                                           | application/json                              |
+| errors.SDKError                               | 400-600                                       | */*                                           |

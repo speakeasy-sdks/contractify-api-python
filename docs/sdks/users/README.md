@@ -1,5 +1,5 @@
 # Users
-(*.users*)
+(*users*)
 
 ### Available Operations
 
@@ -35,7 +35,13 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.CurrentUserResponse](../../models/operations/currentuserresponse.md)**
+### Errors
 
+| Error Object                        | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| errors.CurrentUserResponseBody      | 401                                 | application/json                    |
+| errors.CurrentUserUsersResponseBody | 403                                 | application/json                    |
+| errors.SDKError                     | 400-600                             | */*                                 |
 
 ## list_users
 
@@ -75,4 +81,10 @@ if res.user_collection is not None:
 ### Response
 
 **[operations.ListUsersResponse](../../models/operations/listusersresponse.md)**
+### Errors
 
+| Error Object                      | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| errors.ListUsersResponseBody      | 401                               | application/json                  |
+| errors.ListUsersUsersResponseBody | 403                               | application/json                  |
+| errors.SDKError                   | 400-600                           | */*                               |

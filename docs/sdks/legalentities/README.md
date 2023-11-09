@@ -1,5 +1,5 @@
 # LegalEntities
-(*.legal_entities*)
+(*legal_entities*)
 
 ### Available Operations
 
@@ -43,4 +43,10 @@ if res.legal_entity_collection is not None:
 ### Response
 
 **[operations.ListLegalEntitiesResponse](../../models/operations/listlegalentitiesresponse.md)**
+### Errors
 
+| Error Object                                      | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ListLegalEntitiesResponseBody              | 401                                               | application/json                                  |
+| errors.ListLegalEntitiesLegalEntitiesResponseBody | 403                                               | application/json                                  |
+| errors.SDKError                                   | 400-600                                           | */*                                               |

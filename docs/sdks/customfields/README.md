@@ -1,5 +1,5 @@
 # CustomFields
-(*.custom_fields*)
+(*custom_fields*)
 
 ### Available Operations
 
@@ -43,4 +43,10 @@ if res.custom_field_collection is not None:
 ### Response
 
 **[operations.ListCustomFieldsResponse](../../models/operations/listcustomfieldsresponse.md)**
+### Errors
 
+| Error Object                                    | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.ListCustomFieldsResponseBody             | 401                                             | application/json                                |
+| errors.ListCustomFieldsCustomFieldsResponseBody | 403                                             | application/json                                |
+| errors.SDKError                                 | 400-600                                         | */*                                             |

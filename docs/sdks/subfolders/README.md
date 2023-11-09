@@ -1,5 +1,5 @@
 # Subfolders
-(*.subfolders*)
+(*subfolders*)
 
 ### Available Operations
 
@@ -43,4 +43,10 @@ if res.dossier_collection is not None:
 ### Response
 
 **[operations.ListSubfoldersResponse](../../models/operations/listsubfoldersresponse.md)**
+### Errors
 
+| Error Object                                | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| errors.ListSubfoldersResponseBody           | 401                                         | application/json                            |
+| errors.ListSubfoldersSubfoldersResponseBody | 403                                         | application/json                            |
+| errors.SDKError                             | 400-600                                     | */*                                         |

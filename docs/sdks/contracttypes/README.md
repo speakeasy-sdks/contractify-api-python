@@ -1,5 +1,5 @@
 # ContractTypes
-(*.contract_types*)
+(*contract_types*)
 
 ### Available Operations
 
@@ -43,4 +43,10 @@ if res.contract_type_collection is not None:
 ### Response
 
 **[operations.ListContractTypesResponse](../../models/operations/listcontracttypesresponse.md)**
+### Errors
 
+| Error Object                                      | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ListContractTypesResponseBody              | 401                                               | application/json                                  |
+| errors.ListContractTypesContractTypesResponseBody | 403                                               | application/json                                  |
+| errors.SDKError                                   | 400-600                                           | */*                                               |

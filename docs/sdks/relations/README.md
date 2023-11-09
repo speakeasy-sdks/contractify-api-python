@@ -1,5 +1,5 @@
 # Relations
-(*.relations*)
+(*relations*)
 
 ### Available Operations
 
@@ -64,7 +64,14 @@ if res.two_hundred_and_one_application_json_object is not None:
 ### Response
 
 **[operations.CreateRelationResponse](../../models/operations/createrelationresponse.md)**
+### Errors
 
+| Error Object                                       | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.CreateRelationResponseBody                  | 401                                                | application/json                                   |
+| errors.CreateRelationRelationsResponseBody         | 403                                                | application/json                                   |
+| errors.CreateRelationRelationsResponseResponseBody | 422                                                | application/json                                   |
+| errors.SDKError                                    | 400-600                                            | */*                                                |
 
 ## delete_relation
 
@@ -105,7 +112,15 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteRelationResponse](../../models/operations/deleterelationresponse.md)**
+### Errors
 
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.DeleteRelationResponseBody                     | 400                                                   | application/json                                      |
+| errors.DeleteRelationRelationsResponseBody            | 401                                                   | application/json                                      |
+| errors.DeleteRelationRelationsResponseResponseBody    | 403                                                   | application/json                                      |
+| errors.DeleteRelationRelationsResponse404ResponseBody | 404                                                   | application/json                                      |
+| errors.SDKError                                       | 400-600                                               | */*                                                   |
 
 ## get_relation
 
@@ -146,7 +161,14 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.GetRelationResponse](../../models/operations/getrelationresponse.md)**
+### Errors
 
+| Error Object                                    | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.GetRelationResponseBody                  | 401                                             | application/json                                |
+| errors.GetRelationRelationsResponseBody         | 403                                             | application/json                                |
+| errors.GetRelationRelationsResponseResponseBody | 404                                             | application/json                                |
+| errors.SDKError                                 | 400-600                                         | */*                                             |
 
 ## list_relations
 
@@ -186,7 +208,13 @@ if res.relation_collection is not None:
 ### Response
 
 **[operations.ListRelationsResponse](../../models/operations/listrelationsresponse.md)**
+### Errors
 
+| Error Object                              | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.ListRelationsResponseBody          | 401                                       | application/json                          |
+| errors.ListRelationsRelationsResponseBody | 403                                       | application/json                          |
+| errors.SDKError                           | 400-600                                   | */*                                       |
 
 ## update_relation
 
@@ -244,4 +272,12 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.UpdateRelationResponse](../../models/operations/updaterelationresponse.md)**
+### Errors
 
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.UpdateRelationResponseBody                     | 401                                                   | application/json                                      |
+| errors.UpdateRelationRelationsResponseBody            | 403                                                   | application/json                                      |
+| errors.UpdateRelationRelationsResponseResponseBody    | 404                                                   | application/json                                      |
+| errors.UpdateRelationRelationsResponse422ResponseBody | 422                                                   | application/json                                      |
+| errors.SDKError                                       | 400-600                                               | */*                                                   |

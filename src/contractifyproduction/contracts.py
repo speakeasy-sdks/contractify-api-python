@@ -12,6 +12,7 @@ class Contracts:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_contract(self, request: operations.CreateContractRequest) -> operations.CreateContractResponse:
         r"""Create a contract
         Create a contract
@@ -26,7 +27,10 @@ class Contracts:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -66,6 +70,7 @@ class Contracts:
         return res
 
     
+    
     def delete_contract(self, request: operations.DeleteContractRequest) -> operations.DeleteContractResponse:
         r"""Delete a contract
         Delete a contract
@@ -77,7 +82,10 @@ class Contracts:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -120,6 +128,7 @@ class Contracts:
         return res
 
     
+    
     def get_contract(self, request: operations.GetContractRequest) -> operations.GetContractResponse:
         r"""Get a contract
         Get information about a contract
@@ -131,7 +140,10 @@ class Contracts:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -171,6 +183,7 @@ class Contracts:
         return res
 
     
+    
     def list_contracts(self, request: operations.ListContractsRequest) -> operations.ListContractsResponse:
         r"""List contracts
         List all the contracts within a company
@@ -183,7 +196,10 @@ class Contracts:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -216,6 +232,7 @@ class Contracts:
         return res
 
     
+    
     def update_contract(self, request: operations.UpdateContractRequest) -> operations.UpdateContractResponse:
         r"""Update a contract
         Update a contract
@@ -230,7 +247,10 @@ class Contracts:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

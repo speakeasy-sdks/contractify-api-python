@@ -1,5 +1,5 @@
 # Departments
-(*.departments*)
+(*departments*)
 
 ### Available Operations
 
@@ -50,7 +50,14 @@ if res.two_hundred_and_one_application_json_object is not None:
 ### Response
 
 **[operations.CreateDepartmentResponse](../../models/operations/createdepartmentresponse.md)**
+### Errors
 
+| Error Object                                           | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| errors.CreateDepartmentResponseBody                    | 401                                                    | application/json                                       |
+| errors.CreateDepartmentDepartmentsResponseBody         | 403                                                    | application/json                                       |
+| errors.CreateDepartmentDepartmentsResponseResponseBody | 422                                                    | application/json                                       |
+| errors.SDKError                                        | 400-600                                                | */*                                                    |
 
 ## delete_department
 
@@ -91,7 +98,15 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteDepartmentResponse](../../models/operations/deletedepartmentresponse.md)**
+### Errors
 
+| Error Object                                              | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.DeleteDepartmentResponseBody                       | 400                                                       | application/json                                          |
+| errors.DeleteDepartmentDepartmentsResponseBody            | 401                                                       | application/json                                          |
+| errors.DeleteDepartmentDepartmentsResponseResponseBody    | 403                                                       | application/json                                          |
+| errors.DeleteDepartmentDepartmentsResponse404ResponseBody | 404                                                       | application/json                                          |
+| errors.SDKError                                           | 400-600                                                   | */*                                                       |
 
 ## get_department
 
@@ -132,7 +147,14 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.GetDepartmentResponse](../../models/operations/getdepartmentresponse.md)**
+### Errors
 
+| Error Object                                        | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| errors.GetDepartmentResponseBody                    | 401                                                 | application/json                                    |
+| errors.GetDepartmentDepartmentsResponseBody         | 403                                                 | application/json                                    |
+| errors.GetDepartmentDepartmentsResponseResponseBody | 404                                                 | application/json                                    |
+| errors.SDKError                                     | 400-600                                             | */*                                                 |
 
 ## list_departments
 
@@ -172,7 +194,13 @@ if res.department_collection is not None:
 ### Response
 
 **[operations.ListDepartmentsResponse](../../models/operations/listdepartmentsresponse.md)**
+### Errors
 
+| Error Object                                  | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| errors.ListDepartmentsResponseBody            | 401                                           | application/json                              |
+| errors.ListDepartmentsDepartmentsResponseBody | 403                                           | application/json                              |
+| errors.SDKError                               | 400-600                                       | */*                                           |
 
 ## update_department
 
@@ -216,4 +244,12 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.UpdateDepartmentResponse](../../models/operations/updatedepartmentresponse.md)**
+### Errors
 
+| Error Object                                              | Status Code                                               | Content Type                                              |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| errors.UpdateDepartmentResponseBody                       | 401                                                       | application/json                                          |
+| errors.UpdateDepartmentDepartmentsResponseBody            | 403                                                       | application/json                                          |
+| errors.UpdateDepartmentDepartmentsResponseResponseBody    | 404                                                       | application/json                                          |
+| errors.UpdateDepartmentDepartmentsResponse422ResponseBody | 422                                                       | application/json                                          |
+| errors.SDKError                                           | 400-600                                                   | */*                                                       |

@@ -12,6 +12,7 @@ class Departments:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_department(self, request: operations.CreateDepartmentRequest) -> operations.CreateDepartmentResponse:
         r"""Create a department
         Create a department
@@ -26,7 +27,10 @@ class Departments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -66,6 +70,7 @@ class Departments:
         return res
 
     
+    
     def delete_department(self, request: operations.DeleteDepartmentRequest) -> operations.DeleteDepartmentResponse:
         r"""Delete a department
         Delete a department
@@ -77,7 +82,10 @@ class Departments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -120,6 +128,7 @@ class Departments:
         return res
 
     
+    
     def get_department(self, request: operations.GetDepartmentRequest) -> operations.GetDepartmentResponse:
         r"""Get a department
         Get information about a department
@@ -131,7 +140,10 @@ class Departments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -171,6 +183,7 @@ class Departments:
         return res
 
     
+    
     def list_departments(self, request: operations.ListDepartmentsRequest) -> operations.ListDepartmentsResponse:
         r"""List departments
         List all the departments within a company
@@ -182,7 +195,10 @@ class Departments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -215,6 +231,7 @@ class Departments:
         return res
 
     
+    
     def update_department(self, request: operations.UpdateDepartmentRequest) -> operations.UpdateDepartmentResponse:
         r"""Update a department
         Update a department
@@ -229,7 +246,10 @@ class Departments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

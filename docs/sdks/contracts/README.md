@@ -1,5 +1,5 @@
 # Contracts
-(*.contracts*)
+(*contracts*)
 
 ### Available Operations
 
@@ -96,7 +96,14 @@ if res.two_hundred_and_one_application_json_object is not None:
 ### Response
 
 **[operations.CreateContractResponse](../../models/operations/createcontractresponse.md)**
+### Errors
 
+| Error Object                                       | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.CreateContractResponseBody                  | 401                                                | application/json                                   |
+| errors.CreateContractContractsResponseBody         | 403                                                | application/json                                   |
+| errors.CreateContractContractsResponseResponseBody | 422                                                | application/json                                   |
+| errors.SDKError                                    | 400-600                                            | */*                                                |
 
 ## delete_contract
 
@@ -137,7 +144,15 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteContractResponse](../../models/operations/deletecontractresponse.md)**
+### Errors
 
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.DeleteContractResponseBody                     | 400                                                   | application/json                                      |
+| errors.DeleteContractContractsResponseBody            | 401                                                   | application/json                                      |
+| errors.DeleteContractContractsResponseResponseBody    | 403                                                   | application/json                                      |
+| errors.DeleteContractContractsResponse404ResponseBody | 404                                                   | application/json                                      |
+| errors.SDKError                                       | 400-600                                               | */*                                                   |
 
 ## get_contract
 
@@ -178,7 +193,14 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.GetContractResponse](../../models/operations/getcontractresponse.md)**
+### Errors
 
+| Error Object                                    | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.GetContractResponseBody                  | 401                                             | application/json                                |
+| errors.GetContractContractsResponseBody         | 403                                             | application/json                                |
+| errors.GetContractContractsResponseResponseBody | 404                                             | application/json                                |
+| errors.SDKError                                 | 400-600                                         | */*                                             |
 
 ## list_contracts
 
@@ -218,7 +240,13 @@ if res.contract_collection is not None:
 ### Response
 
 **[operations.ListContractsResponse](../../models/operations/listcontractsresponse.md)**
+### Errors
 
+| Error Object                              | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.ListContractsResponseBody          | 401                                       | application/json                          |
+| errors.ListContractsContractsResponseBody | 403                                       | application/json                          |
+| errors.SDKError                           | 400-600                                   | */*                                       |
 
 ## update_contract
 
@@ -308,4 +336,12 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.UpdateContractResponse](../../models/operations/updatecontractresponse.md)**
+### Errors
 
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.UpdateContractResponseBody                     | 401                                                   | application/json                                      |
+| errors.UpdateContractContractsResponseBody            | 403                                                   | application/json                                      |
+| errors.UpdateContractContractsResponseResponseBody    | 404                                                   | application/json                                      |
+| errors.UpdateContractContractsResponse422ResponseBody | 422                                                   | application/json                                      |
+| errors.SDKError                                       | 400-600                                               | */*                                                   |

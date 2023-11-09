@@ -51,11 +51,11 @@ if res.contract_type_collection is not None:
 ## Available Resources and Operations
 
 
-### [.contract_types](docs/sdks/contracttypes/README.md)
+### [contract_types](docs/sdks/contracttypes/README.md)
 
 * [list_contract_types](docs/sdks/contracttypes/README.md#list_contract_types) - List contract types
 
-### [.contracts](docs/sdks/contracts/README.md)
+### [contracts](docs/sdks/contracts/README.md)
 
 * [create_contract](docs/sdks/contracts/README.md#create_contract) - Create a contract
 * [delete_contract](docs/sdks/contracts/README.md#delete_contract) - Delete a contract
@@ -63,11 +63,11 @@ if res.contract_type_collection is not None:
 * [list_contracts](docs/sdks/contracts/README.md#list_contracts) - List contracts
 * [update_contract](docs/sdks/contracts/README.md#update_contract) - Update a contract
 
-### [.custom_fields](docs/sdks/customfields/README.md)
+### [custom_fields](docs/sdks/customfields/README.md)
 
 * [list_custom_fields](docs/sdks/customfields/README.md#list_custom_fields) - List custom fields
 
-### [.departments](docs/sdks/departments/README.md)
+### [departments](docs/sdks/departments/README.md)
 
 * [create_department](docs/sdks/departments/README.md#create_department) - Create a department
 * [delete_department](docs/sdks/departments/README.md#delete_department) - Delete a department
@@ -75,22 +75,22 @@ if res.contract_type_collection is not None:
 * [list_departments](docs/sdks/departments/README.md#list_departments) - List departments
 * [update_department](docs/sdks/departments/README.md#update_department) - Update a department
 
-### [.documents](docs/sdks/documents/README.md)
+### [documents](docs/sdks/documents/README.md)
 
 * [delete_document](docs/sdks/documents/README.md#delete_document) - Delete a document
 * [get_document](docs/sdks/documents/README.md#get_document) - Get a document
 * [list_documents](docs/sdks/documents/README.md#list_documents) - List documents
 * [update_document](docs/sdks/documents/README.md#update_document) - Update a document
 
-### [.subfolders](docs/sdks/subfolders/README.md)
+### [subfolders](docs/sdks/subfolders/README.md)
 
 * [list_subfolders](docs/sdks/subfolders/README.md#list_subfolders) - List subfolders
 
-### [.legal_entities](docs/sdks/legalentities/README.md)
+### [legal_entities](docs/sdks/legalentities/README.md)
 
 * [list_legal_entities](docs/sdks/legalentities/README.md#list_legal_entities) - List legal entities
 
-### [.offices](docs/sdks/offices/README.md)
+### [offices](docs/sdks/offices/README.md)
 
 * [create_office](docs/sdks/offices/README.md#create_office) - Create an office
 * [delete_office](docs/sdks/offices/README.md#delete_office) - Delete an office
@@ -98,7 +98,7 @@ if res.contract_type_collection is not None:
 * [list_offices](docs/sdks/offices/README.md#list_offices) - List offices
 * [update_office](docs/sdks/offices/README.md#update_office) - Update an office
 
-### [.relations](docs/sdks/relations/README.md)
+### [relations](docs/sdks/relations/README.md)
 
 * [create_relation](docs/sdks/relations/README.md#create_relation) - Create a relation
 * [delete_relation](docs/sdks/relations/README.md#delete_relation) - Delete a relation
@@ -106,7 +106,7 @@ if res.contract_type_collection is not None:
 * [list_relations](docs/sdks/relations/README.md#list_relations) - List relations
 * [update_relation](docs/sdks/relations/README.md#update_relation) - Update a relation
 
-### [.tasks](docs/sdks/tasks/README.md)
+### [tasks](docs/sdks/tasks/README.md)
 
 * [create_task](docs/sdks/tasks/README.md#create_task) - Create a task
 * [delete_task](docs/sdks/tasks/README.md#delete_task) - Delete a task
@@ -114,7 +114,7 @@ if res.contract_type_collection is not None:
 * [list_tasks](docs/sdks/tasks/README.md#list_tasks) - List tasks
 * [update_task](docs/sdks/tasks/README.md#update_task) - Update a task
 
-### [.users](docs/sdks/users/README.md)
+### [users](docs/sdks/users/README.md)
 
 * [current_user](docs/sdks/users/README.md#current_user) - Current User
 * [list_users](docs/sdks/users/README.md#list_users) - List users
@@ -127,7 +127,13 @@ if res.contract_type_collection is not None:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object                                      | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| errors.ListContractTypesResponseBody              | 401                                               | application/json                                  |
+| errors.ListContractTypesContractTypesResponseBody | 403                                               | application/json                                  |
+| errors.SDKError                                   | 400-600                                           | */*                                               |
 
 
 ## Example
@@ -150,10 +156,12 @@ req = operations.ListContractTypesRequest(
 res = None
 try:
     res = s.contract_types.list_contract_types(req)
-
-except (401_application/json_object) as e:
+except (errors.ListContractTypesResponseBody) as e:
     print(e) # handle exception
-except (403_application/json_object) as e:
+except (errors.ListContractTypesContractTypesResponseBody) as e:
+    print(e) # handle exception
+
+except (errors.SDKError) as e:
     print(e) # handle exception
 
 
@@ -234,7 +242,7 @@ if res.contract_type_collection is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import contractifyproduction
@@ -249,12 +257,11 @@ s = contractifyproduction.ContractifyProduction(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name                    | Type                    | Scheme                  |
 | ----------------------- | ----------------------- | ----------------------- |

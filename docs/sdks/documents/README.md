@@ -1,5 +1,5 @@
 # Documents
-(*.documents*)
+(*documents*)
 
 ### Available Operations
 
@@ -47,7 +47,15 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteDocumentResponse](../../models/operations/deletedocumentresponse.md)**
+### Errors
 
+| Error Object                                          | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| errors.DeleteDocumentResponseBody                     | 401                                                   | application/json                                      |
+| errors.DeleteDocumentDocumentsResponseBody            | 403                                                   | application/json                                      |
+| errors.DeleteDocumentDocumentsResponseResponseBody    | 404                                                   | application/json                                      |
+| errors.DeleteDocumentDocumentsResponse422ResponseBody | 422                                                   | application/json                                      |
+| errors.SDKError                                       | 400-600                                               | */*                                                   |
 
 ## get_document
 
@@ -88,7 +96,14 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.GetDocumentResponse](../../models/operations/getdocumentresponse.md)**
+### Errors
 
+| Error Object                                    | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| errors.GetDocumentResponseBody                  | 401                                             | application/json                                |
+| errors.GetDocumentDocumentsResponseBody         | 403                                             | application/json                                |
+| errors.GetDocumentDocumentsResponseResponseBody | 404                                             | application/json                                |
+| errors.SDKError                                 | 400-600                                         | */*                                             |
 
 ## list_documents
 
@@ -129,7 +144,13 @@ if res.document_collection is not None:
 ### Response
 
 **[operations.ListDocumentsResponse](../../models/operations/listdocumentsresponse.md)**
+### Errors
 
+| Error Object                              | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.ListDocumentsResponseBody          | 401                                       | application/json                          |
+| errors.ListDocumentsDocumentsResponseBody | 403                                       | application/json                          |
+| errors.SDKError                           | 400-600                                   | */*                                       |
 
 ## update_document
 
@@ -187,4 +208,11 @@ if res.two_hundred_application_json_object is not None:
 ### Response
 
 **[operations.UpdateDocumentResponse](../../models/operations/updatedocumentresponse.md)**
+### Errors
 
+| Error Object                                       | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.UpdateDocumentResponseBody                  | 401                                                | application/json                                   |
+| errors.UpdateDocumentDocumentsResponseBody         | 403                                                | application/json                                   |
+| errors.UpdateDocumentDocumentsResponseResponseBody | 404                                                | application/json                                   |
+| errors.SDKError                                    | 400-600                                            | */*                                                |

@@ -12,6 +12,7 @@ class Tasks:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_task(self, request: operations.CreateTaskRequest) -> operations.CreateTaskResponse:
         r"""Create a task
         Create a task
@@ -26,7 +27,10 @@ class Tasks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -66,6 +70,7 @@ class Tasks:
         return res
 
     
+    
     def delete_task(self, request: operations.DeleteTaskRequest) -> operations.DeleteTaskResponse:
         r"""Delete a task
         Delete a task
@@ -77,7 +82,10 @@ class Tasks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -113,6 +121,7 @@ class Tasks:
         return res
 
     
+    
     def get_task(self, request: operations.GetTaskRequest) -> operations.GetTaskResponse:
         r"""Get a task
         Get a task
@@ -124,7 +133,10 @@ class Tasks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -164,6 +176,7 @@ class Tasks:
         return res
 
     
+    
     def list_tasks(self, request: operations.ListTasksRequest) -> operations.ListTasksResponse:
         r"""List tasks
         List all tasks within a company
@@ -176,7 +189,10 @@ class Tasks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -209,6 +225,7 @@ class Tasks:
         return res
 
     
+    
     def update_task(self, request: operations.UpdateTaskRequest) -> operations.UpdateTaskResponse:
         r"""Update a task
         Update a task
@@ -223,7 +240,10 @@ class Tasks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
