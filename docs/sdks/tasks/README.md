@@ -45,7 +45,7 @@ req = operations.CreateTaskRequest(
 
 res = s.tasks.create_task(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -141,7 +141,7 @@ req = operations.GetTaskRequest(
 
 res = s.tasks.get_task(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -247,7 +247,7 @@ req = operations.UpdateTaskRequest(
 
 res = s.tasks.update_task(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

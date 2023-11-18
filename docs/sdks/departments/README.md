@@ -35,7 +35,7 @@ req = operations.CreateDepartmentRequest(
 
 res = s.departments.create_department(req)
 
-if res.two_hundred_and_one_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -132,7 +132,7 @@ req = operations.GetDepartmentRequest(
 
 res = s.departments.get_department(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -229,7 +229,7 @@ req = operations.UpdateDepartmentRequest(
 
 res = s.departments.update_department(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

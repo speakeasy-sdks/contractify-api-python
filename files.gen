@@ -18,6 +18,7 @@ src/contractifyproduction/utils/__init__.py
 src/contractifyproduction/utils/retries.py
 src/contractifyproduction/utils/utils.py
 src/contractifyproduction/models/errors/sdkerror.py
+tests/helpers.py
 src/contractifyproduction/models/operations/list_contract_types.py
 src/contractifyproduction/models/operations/create_contract.py
 src/contractifyproduction/models/operations/delete_contract.py

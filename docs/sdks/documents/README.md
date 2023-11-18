@@ -81,7 +81,7 @@ req = operations.GetDocumentRequest(
 
 res = s.documents.get_document(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -193,7 +193,7 @@ req = operations.UpdateDocumentRequest(
 
 res = s.documents.update_document(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

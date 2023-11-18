@@ -26,7 +26,7 @@ s = contractifyproduction.ContractifyProduction(
 
 res = s.users.current_user()
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

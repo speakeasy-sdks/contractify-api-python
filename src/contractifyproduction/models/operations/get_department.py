@@ -36,7 +36,7 @@ class GetDepartmentResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    two_hundred_application_json_object: Optional[GetDepartmentResponseBody] = dataclasses.field(default=None)
+    object: Optional[GetDepartmentResponseBody] = dataclasses.field(default=None)
     r"""OK"""
     
 

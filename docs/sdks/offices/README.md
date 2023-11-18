@@ -45,7 +45,7 @@ req = operations.CreateOfficeRequest(
 
 res = s.offices.create_office(req)
 
-if res.two_hundred_and_one_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -142,7 +142,7 @@ req = operations.GetOfficeRequest(
 
 res = s.offices.get_office(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -249,7 +249,7 @@ req = operations.UpdateOfficeRequest(
 
 res = s.offices.update_office(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

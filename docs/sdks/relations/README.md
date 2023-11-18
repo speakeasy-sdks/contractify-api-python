@@ -49,7 +49,7 @@ req = operations.CreateRelationRequest(
 
 res = s.relations.create_relation(req)
 
-if res.two_hundred_and_one_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -146,7 +146,7 @@ req = operations.GetRelationRequest(
 
 res = s.relations.get_relation(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -257,7 +257,7 @@ req = operations.UpdateRelationRequest(
 
 res = s.relations.update_relation(req)
 
-if res.two_hundred_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

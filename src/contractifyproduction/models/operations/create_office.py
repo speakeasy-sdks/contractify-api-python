@@ -36,7 +36,7 @@ class CreateOfficeResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    two_hundred_and_one_application_json_object: Optional[CreateOfficeResponseBody] = dataclasses.field(default=None)
+    object: Optional[CreateOfficeResponseBody] = dataclasses.field(default=None)
     r"""Created"""
     
 
