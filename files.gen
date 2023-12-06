@@ -136,7 +136,6 @@ src/contractifyproduction/models/__init__.py
 src/contractifyproduction/models/errors/__init__.py
 src/contractifyproduction/models/operations/__init__.py
 src/contractifyproduction/models/shared/__init__.py
-USAGE.md
 docs/models/operations/listcontracttypesrequest.md
 docs/models/operations/listcontracttypesresponse.md
 docs/models/operations/createcontractrequest.md
@@ -401,4 +400,5 @@ docs/sdks/offices/README.md
 docs/sdks/relations/README.md
 docs/sdks/tasks/README.md
 docs/sdks/users/README.md
+USAGE.md
 .gitattributes

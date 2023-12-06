@@ -14,16 +14,17 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] ♻️ Refine your SDK quickly by iterating locally with the [Speakeasy CLI](https://github.com/speakeasy-api/speakeasy)
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ```bash
 pip install git+https://github.com/speakeasy-sdks/contractify-api-python.git
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```python
@@ -47,11 +48,10 @@ if res.contract_type_collection is not None:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [contract_types](docs/sdks/contracttypes/README.md)
 
@@ -120,13 +120,9 @@ if res.contract_type_collection is not None:
 
 * [current_user](docs/sdks/users/README.md#current_user) - Current User
 * [list_users](docs/sdks/users/README.md#list_users) - List users
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
-
-<!-- Start Error Handling -->
+<!-- Start Error Handling [errors] -->
 ## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
@@ -157,22 +153,23 @@ req = operations.ListContractTypesRequest(
 res = None
 try:
     res = s.contract_types.list_contract_types(req)
-except (errors.ListContractTypesResponseBody) as e:
-    print(e) # handle exception
-except (errors.ListContractTypesContractTypesResponseBody) as e:
-    print(e) # handle exception
-
-except (errors.SDKError) as e:
-    print(e) # handle exception
-
+except errors.ListContractTypesResponseBody as e:
+    print(e)  # handle exception
+    raise(e)
+except errors.ListContractTypesContractTypesResponseBody as e:
+    print(e)  # handle exception
+    raise(e)
+except errors.SDKError as e:
+    print(e)  # handle exception
+    raise(e)
 
 if res.contract_type_collection is not None:
     # handle response
     pass
 ```
-<!-- End Error Handling -->
+<!-- End Error Handling [errors] -->
 
-<!-- Start Server Selection -->
+<!-- Start Server Selection [server] -->
 ## Server Selection
 
 ### Select Server by Index
@@ -234,9 +231,9 @@ if res.contract_type_collection is not None:
     # handle response
     pass
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
-<!-- Start Custom HTTP Client -->
+<!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
@@ -250,11 +247,11 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = contractifyproduction.ContractifyProduction(client: http_client)
 ```
-<!-- End Custom HTTP Client -->
+<!-- End Custom HTTP Client [http-client] -->
 
 
 
-<!-- Start Authentication -->
+<!-- Start Authentication [security] -->
 ## Authentication
 
 ### Per-Client Security Schemes
@@ -288,7 +285,7 @@ if res.contract_type_collection is not None:
     # handle response
     pass
 ```
-<!-- End Authentication -->
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
