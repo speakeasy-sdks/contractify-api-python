@@ -22,8 +22,7 @@ from contractifyproduction.models import operations, shared
 
 s = contractifyproduction.ContractifyProduction(
     security=shared.Security(
-        o_auth2="",
-        personal_access_token="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -81,8 +80,7 @@ from contractifyproduction.models import operations, shared
 
 s = contractifyproduction.ContractifyProduction(
     security=shared.Security(
-        o_auth2="",
-        personal_access_token="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -129,8 +127,7 @@ from contractifyproduction.models import operations, shared
 
 s = contractifyproduction.ContractifyProduction(
     security=shared.Security(
-        o_auth2="",
-        personal_access_token="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -177,8 +174,7 @@ from contractifyproduction.models import operations, shared
 
 s = contractifyproduction.ContractifyProduction(
     security=shared.Security(
-        o_auth2="",
-        personal_access_token="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -224,8 +220,7 @@ from contractifyproduction.models import operations, shared
 
 s = contractifyproduction.ContractifyProduction(
     security=shared.Security(
-        o_auth2="",
-        personal_access_token="",
+        o_auth2="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 

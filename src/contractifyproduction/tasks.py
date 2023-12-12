@@ -21,7 +21,7 @@ class Tasks:
         
         url = utils.generate_url(operations.CreateTaskRequest, base_url, '/api/companies/{company}/tasks', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "task_write", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateTaskRequest, "task_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -234,7 +234,7 @@ class Tasks:
         
         url = utils.generate_url(operations.UpdateTaskRequest, base_url, '/api/companies/{company}/tasks/{task}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "task_update", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateTaskRequest, "task_update", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

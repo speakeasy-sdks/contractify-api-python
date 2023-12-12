@@ -21,7 +21,7 @@ class Offices:
         
         url = utils.generate_url(operations.CreateOfficeRequest, base_url, '/api/companies/{company}/offices', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "office_write", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateOfficeRequest, "office_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -240,7 +240,7 @@ class Offices:
         
         url = utils.generate_url(operations.UpdateOfficeRequest, base_url, '/api/companies/{company}/offices/{office}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "office_write", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateOfficeRequest, "office_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

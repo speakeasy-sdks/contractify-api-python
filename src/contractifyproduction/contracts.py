@@ -21,7 +21,7 @@ class Contracts:
         
         url = utils.generate_url(operations.CreateContractRequest, base_url, '/api/companies/{company}/contracts', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "contract_write", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateContractRequest, "contract_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -241,7 +241,7 @@ class Contracts:
         
         url = utils.generate_url(operations.UpdateContractRequest, base_url, '/api/companies/{company}/contracts/{contract}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "contract_write", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateContractRequest, "contract_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

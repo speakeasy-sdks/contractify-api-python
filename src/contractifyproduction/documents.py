@@ -183,7 +183,7 @@ class Documents:
         
         url = utils.generate_url(operations.UpdateDocumentRequest, base_url, '/api/companies/{company}/documents/{document}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "document_write", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateDocumentRequest, "document_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

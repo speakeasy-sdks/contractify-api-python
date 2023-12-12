@@ -21,7 +21,7 @@ class Departments:
         
         url = utils.generate_url(operations.CreateDepartmentRequest, base_url, '/api/companies/{company}/departments', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "department_write", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateDepartmentRequest, "department_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -240,7 +240,7 @@ class Departments:
         
         url = utils.generate_url(operations.UpdateDepartmentRequest, base_url, '/api/companies/{company}/departments/{department}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "department_write", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateDepartmentRequest, "department_write", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
