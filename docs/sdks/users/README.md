@@ -40,7 +40,7 @@ if res.object is not None:
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | errors.CurrentUserResponseBody      | 401                                 | application/json                    |
 | errors.CurrentUserUsersResponseBody | 403                                 | application/json                    |
-| errors.SDKError                     | 400-600                             | */*                                 |
+| errors.SDKError                     | 4x-5xx                              | */*                                 |
 
 ## list_users
 
@@ -85,4 +85,4 @@ if res.user_collection is not None:
 | --------------------------------- | --------------------------------- | --------------------------------- |
 | errors.ListUsersResponseBody      | 401                               | application/json                  |
 | errors.ListUsersUsersResponseBody | 403                               | application/json                  |
-| errors.SDKError                   | 400-600                           | */*                               |
+| errors.SDKError                   | 4x-5xx                            | */*                               |

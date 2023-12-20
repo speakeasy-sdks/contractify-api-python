@@ -48,4 +48,4 @@ if res.contract_type_collection is not None:
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | errors.ListContractTypesResponseBody              | 401                                               | application/json                                  |
 | errors.ListContractTypesContractTypesResponseBody | 403                                               | application/json                                  |
-| errors.SDKError                                   | 400-600                                           | */*                                               |
+| errors.SDKError                                   | 4x-5xx                                            | */*                                               |

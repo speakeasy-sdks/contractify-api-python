@@ -54,7 +54,7 @@ if res.status_code == 200:
 | errors.DeleteDocumentDocumentsResponseBody            | 403                                                   | application/json                                      |
 | errors.DeleteDocumentDocumentsResponseResponseBody    | 404                                                   | application/json                                      |
 | errors.DeleteDocumentDocumentsResponse422ResponseBody | 422                                                   | application/json                                      |
-| errors.SDKError                                       | 400-600                                               | */*                                                   |
+| errors.SDKError                                       | 4x-5xx                                                | */*                                                   |
 
 ## get_document
 
@@ -101,7 +101,7 @@ if res.object is not None:
 | errors.GetDocumentResponseBody                  | 401                                             | application/json                                |
 | errors.GetDocumentDocumentsResponseBody         | 403                                             | application/json                                |
 | errors.GetDocumentDocumentsResponseResponseBody | 404                                             | application/json                                |
-| errors.SDKError                                 | 400-600                                         | */*                                             |
+| errors.SDKError                                 | 4x-5xx                                          | */*                                             |
 
 ## list_documents
 
@@ -147,7 +147,7 @@ if res.document_collection is not None:
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | errors.ListDocumentsResponseBody          | 401                                       | application/json                          |
 | errors.ListDocumentsDocumentsResponseBody | 403                                       | application/json                          |
-| errors.SDKError                           | 400-600                                   | */*                                       |
+| errors.SDKError                           | 4x-5xx                                    | */*                                       |
 
 ## update_document
 
@@ -211,4 +211,4 @@ if res.object is not None:
 | errors.UpdateDocumentResponseBody                  | 401                                                | application/json                                   |
 | errors.UpdateDocumentDocumentsResponseBody         | 403                                                | application/json                                   |
 | errors.UpdateDocumentDocumentsResponseResponseBody | 404                                                | application/json                                   |
-| errors.SDKError                                    | 400-600                                            | */*                                                |
+| errors.SDKError                                    | 4x-5xx                                             | */*                                                |

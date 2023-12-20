@@ -70,7 +70,7 @@ if res.object is not None:
 | errors.CreateRelationResponseBody                  | 401                                                | application/json                                   |
 | errors.CreateRelationRelationsResponseBody         | 403                                                | application/json                                   |
 | errors.CreateRelationRelationsResponseResponseBody | 422                                                | application/json                                   |
-| errors.SDKError                                    | 400-600                                            | */*                                                |
+| errors.SDKError                                    | 4x-5xx                                             | */*                                                |
 
 ## delete_relation
 
@@ -118,7 +118,7 @@ if res.status_code == 200:
 | errors.DeleteRelationRelationsResponseBody            | 401                                                   | application/json                                      |
 | errors.DeleteRelationRelationsResponseResponseBody    | 403                                                   | application/json                                      |
 | errors.DeleteRelationRelationsResponse404ResponseBody | 404                                                   | application/json                                      |
-| errors.SDKError                                       | 400-600                                               | */*                                                   |
+| errors.SDKError                                       | 4x-5xx                                                | */*                                                   |
 
 ## get_relation
 
@@ -165,7 +165,7 @@ if res.object is not None:
 | errors.GetRelationResponseBody                  | 401                                             | application/json                                |
 | errors.GetRelationRelationsResponseBody         | 403                                             | application/json                                |
 | errors.GetRelationRelationsResponseResponseBody | 404                                             | application/json                                |
-| errors.SDKError                                 | 400-600                                         | */*                                             |
+| errors.SDKError                                 | 4x-5xx                                          | */*                                             |
 
 ## list_relations
 
@@ -210,7 +210,7 @@ if res.relation_collection is not None:
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | errors.ListRelationsResponseBody          | 401                                       | application/json                          |
 | errors.ListRelationsRelationsResponseBody | 403                                       | application/json                          |
-| errors.SDKError                           | 400-600                                   | */*                                       |
+| errors.SDKError                           | 4x-5xx                                    | */*                                       |
 
 ## update_relation
 
@@ -275,4 +275,4 @@ if res.object is not None:
 | errors.UpdateRelationRelationsResponseBody            | 403                                                   | application/json                                      |
 | errors.UpdateRelationRelationsResponseResponseBody    | 404                                                   | application/json                                      |
 | errors.UpdateRelationRelationsResponse422ResponseBody | 422                                                   | application/json                                      |
-| errors.SDKError                                       | 400-600                                               | */*                                                   |
+| errors.SDKError                                       | 4x-5xx                                                | */*                                                   |

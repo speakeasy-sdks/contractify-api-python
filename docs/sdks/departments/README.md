@@ -56,7 +56,7 @@ if res.object is not None:
 | errors.CreateDepartmentResponseBody                    | 401                                                    | application/json                                       |
 | errors.CreateDepartmentDepartmentsResponseBody         | 403                                                    | application/json                                       |
 | errors.CreateDepartmentDepartmentsResponseResponseBody | 422                                                    | application/json                                       |
-| errors.SDKError                                        | 400-600                                                | */*                                                    |
+| errors.SDKError                                        | 4x-5xx                                                 | */*                                                    |
 
 ## delete_department
 
@@ -104,7 +104,7 @@ if res.status_code == 200:
 | errors.DeleteDepartmentDepartmentsResponseBody            | 401                                                       | application/json                                          |
 | errors.DeleteDepartmentDepartmentsResponseResponseBody    | 403                                                       | application/json                                          |
 | errors.DeleteDepartmentDepartmentsResponse404ResponseBody | 404                                                       | application/json                                          |
-| errors.SDKError                                           | 400-600                                                   | */*                                                       |
+| errors.SDKError                                           | 4x-5xx                                                    | */*                                                       |
 
 ## get_department
 
@@ -151,7 +151,7 @@ if res.object is not None:
 | errors.GetDepartmentResponseBody                    | 401                                                 | application/json                                    |
 | errors.GetDepartmentDepartmentsResponseBody         | 403                                                 | application/json                                    |
 | errors.GetDepartmentDepartmentsResponseResponseBody | 404                                                 | application/json                                    |
-| errors.SDKError                                     | 400-600                                             | */*                                                 |
+| errors.SDKError                                     | 4x-5xx                                              | */*                                                 |
 
 ## list_departments
 
@@ -196,7 +196,7 @@ if res.department_collection is not None:
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | errors.ListDepartmentsResponseBody            | 401                                           | application/json                              |
 | errors.ListDepartmentsDepartmentsResponseBody | 403                                           | application/json                              |
-| errors.SDKError                               | 400-600                                       | */*                                           |
+| errors.SDKError                               | 4x-5xx                                        | */*                                           |
 
 ## update_department
 
@@ -247,4 +247,4 @@ if res.object is not None:
 | errors.UpdateDepartmentDepartmentsResponseBody            | 403                                                       | application/json                                          |
 | errors.UpdateDepartmentDepartmentsResponseResponseBody    | 404                                                       | application/json                                          |
 | errors.UpdateDepartmentDepartmentsResponse422ResponseBody | 422                                                       | application/json                                          |
-| errors.SDKError                                           | 400-600                                                   | */*                                                       |
+| errors.SDKError                                           | 4x-5xx                                                    | */*                                                       |

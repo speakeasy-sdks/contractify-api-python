@@ -66,7 +66,7 @@ if res.object is not None:
 | errors.CreateTaskResponseBody              | 401                                        | application/json                           |
 | errors.CreateTaskTasksResponseBody         | 403                                        | application/json                           |
 | errors.CreateTaskTasksResponseResponseBody | 422                                        | application/json                           |
-| errors.SDKError                            | 400-600                                    | */*                                        |
+| errors.SDKError                            | 4x-5xx                                     | */*                                        |
 
 ## delete_task
 
@@ -113,7 +113,7 @@ if res.status_code == 200:
 | errors.DeleteTaskResponseBody              | 401                                        | application/json                           |
 | errors.DeleteTaskTasksResponseBody         | 403                                        | application/json                           |
 | errors.DeleteTaskTasksResponseResponseBody | 404                                        | application/json                           |
-| errors.SDKError                            | 400-600                                    | */*                                        |
+| errors.SDKError                            | 4x-5xx                                     | */*                                        |
 
 ## get_task
 
@@ -160,7 +160,7 @@ if res.object is not None:
 | errors.GetTaskResponseBody              | 401                                     | application/json                        |
 | errors.GetTaskTasksResponseBody         | 403                                     | application/json                        |
 | errors.GetTaskTasksResponseResponseBody | 404                                     | application/json                        |
-| errors.SDKError                         | 400-600                                 | */*                                     |
+| errors.SDKError                         | 4x-5xx                                  | */*                                     |
 
 ## list_tasks
 
@@ -205,7 +205,7 @@ if res.task_collection is not None:
 | --------------------------------- | --------------------------------- | --------------------------------- |
 | errors.ListTasksResponseBody      | 401                               | application/json                  |
 | errors.ListTasksTasksResponseBody | 403                               | application/json                  |
-| errors.SDKError                   | 400-600                           | */*                               |
+| errors.SDKError                   | 4x-5xx                            | */*                               |
 
 ## update_task
 
@@ -265,4 +265,4 @@ if res.object is not None:
 | errors.UpdateTaskTasksResponseBody            | 403                                           | application/json                              |
 | errors.UpdateTaskTasksResponseResponseBody    | 404                                           | application/json                              |
 | errors.UpdateTaskTasksResponse422ResponseBody | 422                                           | application/json                              |
-| errors.SDKError                               | 400-600                                       | */*                                           |
+| errors.SDKError                               | 4x-5xx                                        | */*                                           |

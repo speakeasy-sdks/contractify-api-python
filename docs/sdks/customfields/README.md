@@ -48,4 +48,4 @@ if res.custom_field_collection is not None:
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | errors.ListCustomFieldsResponseBody             | 401                                             | application/json                                |
 | errors.ListCustomFieldsCustomFieldsResponseBody | 403                                             | application/json                                |
-| errors.SDKError                                 | 400-600                                         | */*                                             |
+| errors.SDKError                                 | 4x-5xx                                          | */*                                             |

@@ -102,7 +102,7 @@ if res.object is not None:
 | errors.CreateContractResponseBody                  | 401                                                | application/json                                   |
 | errors.CreateContractContractsResponseBody         | 403                                                | application/json                                   |
 | errors.CreateContractContractsResponseResponseBody | 422                                                | application/json                                   |
-| errors.SDKError                                    | 400-600                                            | */*                                                |
+| errors.SDKError                                    | 4x-5xx                                             | */*                                                |
 
 ## delete_contract
 
@@ -150,7 +150,7 @@ if res.status_code == 200:
 | errors.DeleteContractContractsResponseBody            | 401                                                   | application/json                                      |
 | errors.DeleteContractContractsResponseResponseBody    | 403                                                   | application/json                                      |
 | errors.DeleteContractContractsResponse404ResponseBody | 404                                                   | application/json                                      |
-| errors.SDKError                                       | 400-600                                               | */*                                                   |
+| errors.SDKError                                       | 4x-5xx                                                | */*                                                   |
 
 ## get_contract
 
@@ -197,7 +197,7 @@ if res.object is not None:
 | errors.GetContractResponseBody                  | 401                                             | application/json                                |
 | errors.GetContractContractsResponseBody         | 403                                             | application/json                                |
 | errors.GetContractContractsResponseResponseBody | 404                                             | application/json                                |
-| errors.SDKError                                 | 400-600                                         | */*                                             |
+| errors.SDKError                                 | 4x-5xx                                          | */*                                             |
 
 ## list_contracts
 
@@ -242,7 +242,7 @@ if res.contract_collection is not None:
 | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
 | errors.ListContractsResponseBody          | 401                                       | application/json                          |
 | errors.ListContractsContractsResponseBody | 403                                       | application/json                          |
-| errors.SDKError                           | 400-600                                   | */*                                       |
+| errors.SDKError                           | 4x-5xx                                    | */*                                       |
 
 ## update_contract
 
@@ -339,4 +339,4 @@ if res.object is not None:
 | errors.UpdateContractContractsResponseBody            | 403                                                   | application/json                                      |
 | errors.UpdateContractContractsResponseResponseBody    | 404                                                   | application/json                                      |
 | errors.UpdateContractContractsResponse422ResponseBody | 422                                                   | application/json                                      |
-| errors.SDKError                                       | 400-600                                               | */*                                                   |
+| errors.SDKError                                       | 4x-5xx                                                | */*                                                   |

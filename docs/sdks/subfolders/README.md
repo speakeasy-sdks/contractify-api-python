@@ -48,4 +48,4 @@ if res.dossier_collection is not None:
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 | errors.ListSubfoldersResponseBody           | 401                                         | application/json                            |
 | errors.ListSubfoldersSubfoldersResponseBody | 403                                         | application/json                            |
-| errors.SDKError                             | 400-600                                     | */*                                         |
+| errors.SDKError                             | 4x-5xx                                      | */*                                         |

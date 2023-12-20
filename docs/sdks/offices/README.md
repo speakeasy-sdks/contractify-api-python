@@ -66,7 +66,7 @@ if res.object is not None:
 | errors.CreateOfficeResponseBody                | 401                                            | application/json                               |
 | errors.CreateOfficeOfficesResponseBody         | 403                                            | application/json                               |
 | errors.CreateOfficeOfficesResponseResponseBody | 422                                            | application/json                               |
-| errors.SDKError                                | 400-600                                        | */*                                            |
+| errors.SDKError                                | 4x-5xx                                         | */*                                            |
 
 ## delete_office
 
@@ -114,7 +114,7 @@ if res.status_code == 200:
 | errors.DeleteOfficeOfficesResponseBody            | 401                                               | application/json                                  |
 | errors.DeleteOfficeOfficesResponseResponseBody    | 403                                               | application/json                                  |
 | errors.DeleteOfficeOfficesResponse404ResponseBody | 404                                               | application/json                                  |
-| errors.SDKError                                   | 400-600                                           | */*                                               |
+| errors.SDKError                                   | 4x-5xx                                            | */*                                               |
 
 ## get_office
 
@@ -161,7 +161,7 @@ if res.object is not None:
 | errors.GetOfficeResponseBody                | 401                                         | application/json                            |
 | errors.GetOfficeOfficesResponseBody         | 403                                         | application/json                            |
 | errors.GetOfficeOfficesResponseResponseBody | 404                                         | application/json                            |
-| errors.SDKError                             | 400-600                                     | */*                                         |
+| errors.SDKError                             | 4x-5xx                                      | */*                                         |
 
 ## list_offices
 
@@ -206,7 +206,7 @@ if res.office_collection is not None:
 | ------------------------------------- | ------------------------------------- | ------------------------------------- |
 | errors.ListOfficesResponseBody        | 401                                   | application/json                      |
 | errors.ListOfficesOfficesResponseBody | 403                                   | application/json                      |
-| errors.SDKError                       | 400-600                               | */*                                   |
+| errors.SDKError                       | 4x-5xx                                | */*                                   |
 
 ## update_office
 
@@ -267,4 +267,4 @@ if res.object is not None:
 | errors.UpdateOfficeOfficesResponseBody            | 403                                               | application/json                                  |
 | errors.UpdateOfficeOfficesResponseResponseBody    | 404                                               | application/json                                  |
 | errors.UpdateOfficeOfficesResponse422ResponseBody | 422                                               | application/json                                  |
-| errors.SDKError                                   | 400-600                                           | */*                                               |
+| errors.SDKError                                   | 4x-5xx                                            | */*                                               |

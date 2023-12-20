@@ -48,4 +48,4 @@ if res.legal_entity_collection is not None:
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | errors.ListLegalEntitiesResponseBody              | 401                                               | application/json                                  |
 | errors.ListLegalEntitiesLegalEntitiesResponseBody | 403                                               | application/json                                  |
-| errors.SDKError                                   | 400-600                                           | */*                                               |
+| errors.SDKError                                   | 4x-5xx                                            | */*                                               |
