@@ -4,15 +4,15 @@ management:
   docChecksum: 35b77c8e231012e142d527cdb5536b80
   docVersion: "2022-08-16"
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.4.1
-  configChecksum: 3eb8975fa7ca1b14d3a0f5f67a3d91f5
+  generationVersion: 2.228.1
+  releaseVersion: 0.4.2
+  configChecksum: c77c374b0e6ae00292d258228472c58e
   repoURL: https://github.com/speakeasy-sdks/contractify-api-python.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/contractify-api-python.git
 features:
   python:
-    core: 4.4.0
+    core: 4.4.1
     globalSecurity: 2.83.1
     globalServerURLs: 2.82.1
 generatedFiles:
